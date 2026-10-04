@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="西安五天轻松旅行：逐日安排、交互路书、地图、42条美食参考、经济型酒店与交通细节。">
+<title>西安五天轻松旅行</title>
+<style>
+:root{color-scheme:light dark;--bg:#f5f5f7;--paper:#fff;--text:#1d1d1f;--muted:#6e6e73;--line:#d2d2d7;--accent:#0066cc;--selected:#e8f1fc;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.65}a{color:var(--accent);text-underline-offset:3px}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}header,main{max-width:1120px;margin:auto;padding:24px}header{padding-bottom:16px}h1{font-size:clamp(26px,4vw,40px);letter-spacing:-.025em;line-height:1.2;margin:8px 0 12px}header p{color:var(--muted);margin:0;font-size:15px}.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:22px}.tabs button{border:0;background:transparent;border-radius:12px;padding:10px 18px;color:var(--muted);min-height:44px}.tabs button[aria-selected="true"]{background:var(--paper);color:var(--text);box-shadow:0 1px 5px #0000000b}.tabs button:hover{background:var(--selected)}main{padding-top:0}[hidden]{display:none!important}.viewer{overflow:hidden;border-radius:18px;background:var(--paper)}iframe{display:block;width:100%;height:clamp(420px,72vh,800px);border:0}.viewer-tools{display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--line);font-size:14px}.viewer-tools span{color:var(--muted)}article{background:var(--paper);padding:28px;border-radius:18px}article h2{font-size:25px;margin:30px 0 16px;line-height:1.4}article h2:first-child{margin-top:0}article h3{font-size:20px;margin:28px 0 12px;scroll-margin-top:20px}article p,article ul{max-width:80ch}article li{margin:9px 0}article strong{font-weight:600}.table-wrap{width:100%;overflow-x:auto;margin:18px 0;border-bottom:1px solid var(--line)}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);min-width:130px}th{font-weight:600;background:var(--bg)}tr:last-child td{border-bottom:0}footer{max-width:1120px;margin:auto;padding:0 24px 30px;color:var(--muted);font-size:13px}dialog{max-width:min(560px,calc(100vw - 32px));max-height:80vh;overflow:auto;border:1px solid var(--line);border-radius:20px;background:var(--paper);color:var(--text);padding:24px}dialog::backdrop{background:#0007}dialog h2{font-size:22px;line-height:1.4;margin:0 36px 10px 0}dialog p{margin:12px 0}.dialog-top{display:flex;justify-content:space-between;gap:16px}.close{border:0;border-radius:9px;background:var(--bg);color:var(--text);min-width:44px;min-height:44px;font-size:24px}.detail-time{color:var(--muted);font-size:14px}
+@media(prefers-color-scheme:dark){:root{--bg:#151516;--paper:#242426;--text:#f5f5f7;--muted:#aeaeb2;--line:#454548;--accent:#75b7ff;--selected:#233348}}
+@media(max-width:600px){header,main{padding:18px 14px}header{padding-bottom:14px}main{padding-top:0}.tabs{gap:2px}.tabs button{padding:9px 13px}.viewer,article{border-radius:14px}article{padding:18px}iframe{height:64vh;min-height:420px}.viewer-tools{padding:12px 14px}th,td{padding:10px;min-width:135px}article ul{padding-left:22px}footer{padding:0 14px 24px}}
+</style>
+</head>
+<body>
+<header>
+<h1>西安五天轻松旅行</h1>
+<p>2026年10月29日—11月2日 · 两人 · 每天留午休</p>
+<nav class="tabs" role="tablist" aria-label="旅行内容">
+<button id="tab-journal" role="tab" aria-controls="journal" aria-selected="true" type="button">路书</button>
+<button id="tab-plan" role="tab" aria-controls="plan" aria-selected="false" type="button" tabindex="-1">计划</button>
+<button id="tab-food" role="tab" aria-controls="food" aria-selected="false" type="button" tabindex="-1">吃喝</button>
+<button id="tab-hotels" role="tab" aria-controls="hotels" aria-selected="false" type="button" tabindex="-1">酒店</button>
+<button id="tab-transport" role="tab" aria-controls="transport" aria-selected="false" type="button" tabindex="-1">交通</button>
+</nav>
+</header>
+<main>
+<section id="journal" role="tabpanel" aria-labelledby="tab-journal">
+<div class="viewer">
+<iframe id="roadbook-frame" src="roadbook.html" title="西安交互路书与地图"></iframe>
+<div class="viewer-tools"><span>图中可切换日志／地图，点击地点看安排。</span><a href="roadbook.html" target="_blank" rel="noopener">全屏路书</a></div>
+</div>
+</section>
+<section id="plan" role="tabpanel" aria-labelledby="tab-plan" hidden><article><h2>总览</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>住宿区域</th>
+<th>今日安排</th>
+<th>交通</th>
+<th>节奏</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10.29 周四</td>
+<td>机场→永宁门</td>
+<td>补觉、钟鼓楼、马宾小炒</td>
+<td>进城优先网约车；晚间地铁＋步行</td>
+<td>轻松</td>
+</tr>
+<tr>
+<td>10.30 周五</td>
+<td>永宁门</td>
+<td>兵马俑、回城休息</td>
+<td>优先网约车往返</td>
+<td>适中</td>
+</tr>
+<tr>
+<td>10.31 周六</td>
+<td>永宁门</td>
+<td>陕历博、肉夹馍、午休、大雁塔</td>
+<td>去程地铁，午休与夜游优先打车</td>
+<td>适中</td>
+</tr>
+<tr>
+<td>11.01 周日</td>
+<td>永宁门</td>
+<td>午休、城墙短走、书院门、裤带面</td>
+<td>短段步行；累了打车</td>
+<td>轻松</td>
+</tr>
+<tr>
+<td>11.02 周一</td>
+<td>永宁门→机场</td>
+<td>退房，按航班倒推离店</td>
+<td>网约车或2号线换14号线</td>
+<td>随航班调整</td>
+</tr>
+</tbody></table>
+<h2>每日安排</h2>
+<p>以下为建议窗口；首日晚间与第四天补出步行衔接。预约时段变化后再调整。</p>
+<h3 id="plan-day-1">10.29｜补觉、钟鼓楼与小炒</h3>
+<ul>
+<li><strong>凌晨1点多</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B038E02IJ0">西安咸阳国际机场抵达</a></li>
+<li><strong>落地后—约03:00</strong> · 接机、机场酒店入住</li>
+<li><strong>03:00—10:30</strong> · 机场酒店补觉、洗漱</li>
+<li><strong>10:30—11:30</strong> · 早午餐、整理行李、退房</li>
+<li><strong>11:30—13:30</strong> · 前往永宁门住宿区</li>
+<li><strong>13:30—14:30</strong> · 市区酒店寄存／入住、午饭</li>
+<li><strong>14:30—16:30</strong> · 市区酒店午休</li>
+<li><strong>17:00—17:20</strong> · 前往钟楼</li>
+<li><strong>17:20—17:35</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D09TAA">钟楼外观</a></li>
+<li><strong>17:50—18:00</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D07CMS">鼓楼周边</a></li>
+<li><strong>18:30—19:15</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFGCBK2I">晚餐｜马宾小炒</a></li>
+<li><strong>19:15—20:30</strong> · 散步、返回市区酒店</li>
+</ul>
+<p>马宾：生熟双拼小炒。仍困就取消晚间逛街，在住宿区吃；酒店入住与午休以可进房为前提。</p>
+<h3 id="plan-day-2">10.30｜兵马俑，回城休息</h3>
+<ul>
+<li><strong>08:00—08:40</strong> · 酒店附近早餐</li>
+<li><strong>08:45—10:45</strong> · 前往兵马俑、入园核验</li>
+<li><strong>10:45—13:00</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFGXMLTU">兵马俑｜一号坑、二三号坑</a></li>
+<li><strong>13:00—14:00</strong> · 出口附近午餐</li>
+<li><strong>14:00—16:00</strong> · 返回永宁门住宿区</li>
+<li><strong>16:00—18:00</strong> · 市区酒店休息</li>
+<li><strong>18:00—19:00</strong> · 酒店附近晚餐</li>
+<li><strong>19:00以后</strong> · 住宿处休息</li>
+</ul>
+<p>一号坑优先，再看二、三号坑。公共交通2→1→9号线至华清池，再接游613路／网约车，全程2.5—3小时；早餐与出发提前。</p>
+<h3 id="plan-day-3">10.31｜陕历博、肉夹馍、大雁塔</h3>
+<ul>
+<li><strong>08:00—09:00</strong> · 早餐、出门准备</li>
+<li><strong>09:00—10:00</strong> · 前往陕历博、排队</li>
+<li><strong>10:00—12:30</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFFVOCLC">陕西历史博物馆｜基本陈列</a></li>
+<li><strong>12:45—13:30</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D07BBR">午餐｜子午路张记肉夹馍（翠华路店）</a></li>
+<li><strong>13:30—14:15</strong> · 返回市区酒店</li>
+<li><strong>14:15—16:30</strong> · 市区酒店午休</li>
+<li><strong>16:30—17:45</strong> · 前往大雁塔、大悦城</li>
+<li><strong>17:45—18:30</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFIS0P13">晚餐｜惠记粉汤羊血（大悦城店）</a></li>
+<li><strong>18:40—19:00</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D12PCJ">大雁塔南广场｜塔外观</a></li>
+<li><strong>19:10—19:30</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFLQE8IX">大唐不夜城北段短逛</a></li>
+<li><strong>19:30—20:30</strong> · 返回市区酒店</li>
+</ul>
+<p>张记：每人一个馍，共享凉皮／米皮。惠记：各小碗粉汤羊血。未约到陕博，只换已预约的西博＋小雁塔；两馆无票就上午休息，午饭就近。</p>
+<h3 id="plan-day-4">11.01｜城墙、书院门、裤带面</h3>
+<ul>
+<li><strong>09:00—10:00</strong> · 酒店附近早餐</li>
+<li><strong>10:00—11:30</strong> · 上午休息／可选园林</li>
+<li><strong>11:30—13:00</strong> · 住宿区午餐</li>
+<li><strong>13:00—15:00</strong> · 市区酒店午休</li>
+<li><strong>15:00—15:30</strong> · 前往永宁门、购票</li>
+<li><strong>15:30—16:30</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D02131">永宁门城墙短程散步</a></li>
+<li><strong>16:40—17:15</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0HAJD5VUL">书院门慢逛</a></li>
+<li><strong>17:40—18:30</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0KG57GAJV">晚餐｜爱骅裤带面馆（总店）</a></li>
+<li><strong>18:30—19:30</strong> · 回酒店、整理行李</li>
+</ul>
+<p>城墙走20—25分钟折返，同门下墙。爱骅：小份油泼或三合一＋素菜。西侧替换：湘子庙街→德福巷→春发生（南院门25号，葫芦头）；取消书院门和爱骅。小雁塔仅前一天未去且约到票时选，早餐后出发，90分钟含路程。</p>
+<h3 id="plan-day-5">11.02｜按航班返程</h3>
+<ul>
+<li><strong>按航班调整</strong> · 早餐、整理行李、退房</li>
+<li><strong>条件式备选</strong> · 晚班机可选：寄存、就近吃饭</li>
+<li><strong>按起飞时间倒推</strong> · 取行李、前往机场</li>
+<li><strong>起飞前约2小时到达</strong> · <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B038E02IJ0">西安咸阳国际机场返程</a></li>
+</ul>
+<p>国内航班：打车起飞前3.5—4小时、地铁提前4—4.5小时离店，约提前2小时到航站楼。晚班机寄存后活动，取行李另留20—30分钟；清晨核对首班车。不设默认起飞时间。</p>
+<h2>出发前确认</h2>
+<ul>
+<li>两家酒店名称、地址、可入住时间；机场免费凌晨接机、保房、退房要求。</li>
+<li>返程航班时间、航站楼；酒店早餐和就近普通餐次尚未选店，待住宿确定后补。</li>
+<li><strong>陕历博</strong>：10.31参观；当前规则10.26 17:00放票。仅基本陈列，<a target="_blank" rel="noopener noreferrer" href="https://www.sxhm.com/guide.html">官方指南</a>。</li>
+<li><strong>兵马俑</strong>：先实名买10.30门票，10:45为建议入园时段，<a target="_blank" rel="noopener noreferrer" href="https://bmy.com.cn/guide/">官方导览</a>。</li>
+<li><strong>西博备选</strong>：10.26 18:00约10.31，或10.27 18:00约11.01，两天择一；西门／北门入园，<a target="_blank" rel="noopener noreferrer" href="https://www.xabwy.com/showtwo.html?id=1373">预约公告</a>。</li>
+<li>预约与开放公告于2026.10.04复核；餐馆、酒店沿用v1资料，出发前确认营业、房价与房态。</li>
+</ul>
+<h2>提醒</h2>
+<ul>
+<li>每天保留午休；入住前只寄存，不默认能进房休息。</li>
+<li>每餐一家主食店，两人先点小份；小吃备选用于替换。</li>
+<li>下雨时夜游改室内休息；大雨、大风取消城墙。</li>
+</ul>
+<h2>预算</h2>
+<p>两人合计 <strong>3,000—5,000 元</strong>：含市区四晚住宿、餐饮、门票、当地交通；不含往返机票、机场过渡夜、购物。市区四晚房费预算 <strong>800—1,200 元／间</strong>。加机场一晚 100—150 元，两人当地合计约 <strong>3,100—5,150 元</strong>；机场预算放宽至 200 元时，上限约 <strong>5,200 元</strong>。均为估算，按实际订单结算。</p>
+</article></section>
+<section id="food" role="tabpanel" aria-labelledby="tab-food" hidden><article><h2>吃喝</h2>
+<p>正式特色餐馆：马宾、翠华路张记、大悦城惠记、爱骅。其余用于替换，不增加串店。</p>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>午餐</th>
+<th>晚餐</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10.29</td>
+<td>永宁门附近，店待补</td>
+<td>马宾：生熟双拼小炒</td>
+</tr>
+<tr>
+<td>10.30</td>
+<td>兵马俑出口附近，店待补</td>
+<td>酒店附近，店待补</td>
+</tr>
+<tr>
+<td>10.31</td>
+<td>翠华路张记：肉夹馍＋凉皮／米皮</td>
+<td>大悦城惠记：粉汤羊血</td>
+</tr>
+<tr>
+<td>11.01</td>
+<td>酒店附近，店待补</td>
+<td>爱骅：油泼或三合一裤带面</td>
+</tr>
+<tr>
+<td>11.02</td>
+<td>按航班决定</td>
+<td>按航班决定</td>
+</tr>
+</tbody></table>
+<p>备选记录共42条，包含重复门店的不同用途；只保留已有地址、推荐菜和来源，不将评论辨认当作UP亲口推荐。</p>
+<h3>餐馆备选</h3>
+<table>
+<thead>
+<tr>
+<th>类别／店铺</th>
+<th>推荐菜</th>
+<th>地点</th>
+<th>参考与安排</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>志亮灌汤蒸饺·清真（庙后街店）</td>
+<td>牛肉蒸饺、八宝粥</td>
+<td>莲湖区庙后街 <strong>200 号</strong>；<a target="_blank" rel="noopener noreferrer" href="https://gs.ctrip.com/html5/you/foods/fooddetail/7/16460234.html">携程地点及菜单</a></td>
+<td>顺路补充；第一晚备选。</td>
+</tr>
+<tr>
+<td>清真马宾小炒</td>
+<td>生熟双拼小炒</td>
+<td>北广济街北口 <strong>281 号</strong>；<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFGCBK2I">高德门店定位</a></td>
+<td>口播对应；第一晚主选。</td>
+</tr>
+<tr>
+<td>老贾家凉糕</td>
+<td>蜂蜜凉糕、凉粽，分一份尝</td>
+<td>小学习巷 <strong>79 号</strong>；<a target="_blank" rel="noopener noreferrer" href="https://www.woshiji.cn/show-20-4432-1.html">地址资料</a></td>
+<td>顺路补充，非视频同店确认；甜食可选。</td>
+</tr>
+<tr>
+<td>马洪小炒泡馍（回民街店）</td>
+<td>牛肉小炒、牛羊肉泡馍</td>
+<td>莲湖区红埠街 <strong>46 号</strong>，勿选东新街分店；<a target="_blank" rel="noopener noreferrer" href="https://m.tuniu.com/restaurant/3609241/">途牛门店资料</a></td>
+<td>顺路补充；第一晚替换。</td>
+</tr>
+<tr>
+<td>清真·壹佳烤肉（红福小区店）</td>
+<td>烤筋、肥瘦，刷酱或老三样</td>
+<td>红埠街 <strong>1 号 10101</strong>，老乌家油茶麻花对面；部分评论写 3 号；<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0KG271K7E">高德门店定位</a></td>
+<td>评论线索，非 UP 明确推荐；晚饭替换。</td>
+</tr>
+<tr>
+<td>子午路张记肉夹馍（翠华路店）</td>
+<td>腊汁肉夹馍配凉皮／米皮</td>
+<td>翠华路挚友大厦一层，高德标 <strong>翠花南路 229 号</strong>，点评常写 227 号；<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D07BBR">高德门店定位</a></td>
+<td>UP 提及、当次未吃；第三天午饭。</td>
+</tr>
+<tr>
+<td>春发生饭店·非遗（南院门店）</td>
+<td>葫芦头泡馍</td>
+<td>碑林区南院门 <strong>25 号</strong>；<a target="_blank" rel="noopener noreferrer" href="https://www.dianping.com/shop/550414/photos/album/p5">点评地址</a></td>
+<td>顺路补充；第四天西侧线。</td>
+</tr>
+<tr>
+<td>爱骅裤带面馆（总店）</td>
+<td>油泼裤带面、三合一面</td>
+<td>碑林区端履门 <strong>城市之心 1 层 6 号</strong>；<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0KG57GAJV">高德定位</a>、<a target="_blank" rel="noopener noreferrer" href="https://gs.ctrip.com/html5/you/foods/fooddetail/100057/16573410.html">携程菜单</a></td>
+<td>顺路补充；第四天东侧线。</td>
+</tr>
+<tr>
+<td>秦豫肉夹馍（东木头市店）</td>
+<td>腊汁肉夹馍</td>
+<td>碑林区东木头市 <strong>19 号</strong>，勿与骡马市分店混用；<a target="_blank" rel="noopener noreferrer" href="https://m.map.360.cn/?pid=9b5b665881f82723&src=pc_shenbian">360 地图定位</a>、<a target="_blank" rel="noopener noreferrer" href="https://m.cityhui.com/shop/21279.html">营业参考</a></td>
+<td>评论提及；第四天早午餐。先查营业、售罄。</td>
+</tr>
+</tbody></table>
+<h3>参考探店</h3>
+<p>15家线索：3家口播对应、12家评论辨认。评论门牌、视频同店及现时营业仍需核对。</p>
+<table>
+<thead>
+<tr>
+<th>类别／店铺</th>
+<th>推荐菜</th>
+<th>地点</th>
+<th>参考与安排</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>馨磊酱肉店（麦苋街店）</td>
+<td>酱牛肉、牛肚、牛筋</td>
+<td><strong>麦苋街 92 号</strong>。高德为 92 号，视频评论写 90 号，按完整店名定位。<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D07BJO">高德</a></td>
+<td>口播对应；睿哥 02:56，丹牛评论 00:45。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1u1Lx6aEHF?t=176">02:56</a> <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=45">00:45</a> 分一份，可配馍。</td>
+</tr>
+<tr>
+<td>马家锅盔一绝</td>
+<td>托托馍、锅盔</td>
+<td><strong>麦苋街 54 号为评论提供的门牌，尚未独立核实</strong>；点评能查到同名店及托托馍、锅盔。<a target="_blank" rel="noopener noreferrer" href="https://www.dianping.com/shop/20843887/photos">门店资料</a></td>
+<td>评论辨认；门牌未核。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=100">01:40</a> 两人分一个配酱肉。</td>
+</tr>
+<tr>
+<td>老杨家饺子馆（小皮院）</td>
+<td>酸汤水饺</td>
+<td><strong>小皮院 89 号为评论定位，门牌待复核</strong>。检索能查到小皮院老杨家；注意与自强西路同名店区分。<a target="_blank" rel="noopener noreferrer" href="https://post.smzdm.com/p/a9509vp7/">小皮院门店线索</a></td>
+<td>评论辨认；第一晚替换。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=195">03:15</a> 替换第一晚主食。</td>
+</tr>
+<tr>
+<td>米文军小豆糕</td>
+<td>小豆糕</td>
+<td><strong>北广济街 268 号附近为评论定位</strong>；按流动小摊看待，出摊位置和时间待确认，碰不到就略过</td>
+<td>评论辨认；摊位、出摊待确认。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=333">05:33</a> 少量甜食。</td>
+</tr>
+<tr>
+<td>清真马宾小炒</td>
+<td>生熟双拼小炒</td>
+<td><strong>北广济街北口 281 号</strong>，地址已与高德、携程对应。<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFGCBK2I">高德</a>、<a target="_blank" rel="noopener noreferrer" href="https://gs.ctrip.com/html5/you/foods/fooddetail/7/15932543.html">菜品</a></td>
+<td>口播对应；第一晚主选。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1u1Lx6aEHF?t=240">04:00</a> <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=347">05:47</a> 小份，酸辣自选。</td>
+</tr>
+<tr>
+<td>老刘家泡馍·陕西老字号（钟鼓楼广济街）</td>
+<td>手掰牛羊肉泡馍</td>
+<td><strong>北广济街 101 号</strong>，勿与下面土门老刘家混用。<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFITBVO7">高德</a></td>
+<td>评论辨认；回坊正餐替换。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=474">07:54</a> 作一顿正餐。</td>
+</tr>
+<tr>
+<td>好妈妈时令小吃</td>
+<td>蜂蜜凉粽、凉糕</td>
+<td><strong>庙后街 172 号为评论定位，门牌和当季售卖情况待复核</strong></td>
+<td>评论辨认；门牌、当季营业待核。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=636">10:36</a> 分一份，替换老贾。</td>
+</tr>
+<tr>
+<td>张庆烤肉·清真</td>
+<td>肉筋、板筋、盐筋、鱼柳</td>
+<td><strong>北广济街 50 号，西大街百盛向北约 20 米路西</strong>。<a target="_blank" rel="noopener noreferrer" href="https://us.trip.com/restaurant/china/xian/detail/restaurant-143154711">分店地址</a></td>
+<td>口播对应；仅对应视频第一家烤肉。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1u1Lx6aEHF?t=652">10:52</a> 问起点串数，少量点。</td>
+</tr>
+<tr>
+<td>刘二店正宗裤带面（围墙巷店）</td>
+<td>三合一裤带面、蘸水面</td>
+<td><strong>围墙巷与振兴路路口东北角</strong>；评论写围墙巷 118 号，门牌待复核。点评能查到完整分店名。<a target="_blank" rel="noopener noreferrer" href="https://www.dianping.com/shop/G7xTekjIxqDAiOCb/photos">门店</a>、<a target="_blank" rel="noopener noreferrer" href="https://blog.sina.cn/dpool/blog/s/blog_6e1083630102wq22.html">路口定位参考</a></td>
+<td>评论辨认；11.01 或酒店附近午饭替换。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=1155">19:15</a> 问小份或按根点。</td>
+</tr>
+<tr>
+<td>朱选民大米面皮（西木头市总店）</td>
+<td>米皮</td>
+<td><strong>西木头市 17 号</strong>，360 地图定位；其他资料写西木头市中段、近粉巷。<a target="_blank" rel="noopener noreferrer" href="https://m.map.360.cn/?new=1&pid=11e4f0a23d1ce9df&src=pc_shenbian">地图</a></td>
+<td>评论辨认；11.01 西侧线小吃。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=1352">22:32</a> 分一份，辣度自选。</td>
+</tr>
+<tr>
+<td>虎子水盆羊肉（翠华路总店）</td>
+<td>水盆羊肉、月牙饼</td>
+<td><strong>翠华南路 229 号，擎友大厦综合楼临街商铺</strong>，采用高德写法。<a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFGZPDIV">高德</a></td>
+<td>评论辨认；10.31 午饭替换张记。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=1438">23:58</a> 羊骨头按供应、胃口加。</td>
+</tr>
+<tr>
+<td>土门老刘家粉汤羊血（西城芳洲店）</td>
+<td>粉汤羊血、腊汁肉夹馍</td>
+<td><strong>西二环路 10 号，天佑国际酒店往北约 20 米</strong>。<a target="_blank" rel="noopener noreferrer" href="https://touch.go.qunar.com/poi/6118547">去哪儿地点</a>、<a target="_blank" rel="noopener noreferrer" href="https://www.dianping.com/shop/5434235/photos">点评菜品</a></td>
+<td>评论辨认；土门较远，后续备选。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=727">12:07</a> 替换一顿饭。</td>
+</tr>
+<tr>
+<td>樊永平梆梆肉葫芦头</td>
+<td>梆梆肉、葫芦头</td>
+<td><strong>灞桥区狄寨南路、狄寨街道中心幼儿园对面为评论定位</strong>；尚未独立核对门店地图与现时营业</td>
+<td>评论辨认；狄寨较远，后续备选。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=902">15:02</a> 含猪内脏。</td>
+</tr>
+<tr>
+<td>潇洒哥古法烤肉（雅苑东方店）</td>
+<td>盐筋、牛上脑、黑胡椒牛肉、腰子</td>
+<td><strong>新城区建工路 9 号为评论定位</strong>；尚未独立核实该分店当前状态</td>
+<td>评论辨认；不在主线，后续备选。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV17Z7a6vEKo?t=1552">25:52</a> 少量点。</td>
+</tr>
+<tr>
+<td>老焦熏肉大饼（夜市店，候选分店）</td>
+<td>熏肉大饼</td>
+<td><strong>龙首北路、龙御花园西门旁</strong>能查到同名夜市店；<strong>视频对应分店尚未确认</strong>。<a target="_blank" rel="noopener noreferrer" href="https://map.360.cn/shenghuo/detail?pguid=a97ff69d1b59f739&src=pc_shenbian">360 地图</a></td>
+<td>评论辨认；分店未确认，龙首原线索。 <a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1rhEz6FE7V">君在西安《从外地回到西安，连着吃十几种地道小吃才解馋》</a> 分一份。</td>
+</tr>
+</tbody></table>
+<h3>小吃分类</h3>
+<table>
+<thead>
+<tr>
+<th>类别／店铺</th>
+<th>推荐菜</th>
+<th>地点</th>
+<th>参考与安排</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>小炒泡馍 · 马洪小炒泡馍（回民街店）</td>
+<td>牛肉小炒</td>
+<td>莲湖区 <strong>红埠街 46 号</strong></td>
+<td>10.29 晚饭替换，取消其他主食店。 <a target="_blank" rel="noopener noreferrer" href="https://m.tuniu.com/restaurant/3609241/">门店资料</a></td>
+</tr>
+<tr>
+<td>小炒泡馍 · 刘信牛羊肉小炒泡馍（洒金桥店）</td>
+<td>牛肉小炒</td>
+<td><strong>洒金桥 129 号</strong></td>
+<td>第一晚改走洒金桥。 <a target="_blank" rel="noopener noreferrer" href="https://xa.city8.com/cater/80k4py7c5u8mb5d38a">地址资料</a></td>
+</tr>
+<tr>
+<td>酸汤水饺 · 马二饺子馆（洒金桥）</td>
+<td>牛肉韭黄酸汤水饺</td>
+<td><strong>洒金桥 131 号</strong>，可搜“马二酸汤水饺”</td>
+<td>钟鼓楼→洒金桥→酒店。 <a target="_blank" rel="noopener noreferrer" href="https://m.xa.bendibao.com/xiuxian/73538.shtm">店名、地址与菜品参考</a></td>
+</tr>
+<tr>
+<td>酸汤水饺 · 马茹特色饺子馆</td>
+<td>酸汤水饺</td>
+<td><strong>庙后街，大美克拉罗斯酒店一层商户</strong></td>
+<td>第一晚庙后街线替换志亮。旧门牌有差异，按酒店定位。 <a target="_blank" rel="noopener noreferrer" href="https://k.sina.cn/article_2614981087_9bdd71df02003rvta.html?from=local">本地美食报道</a></td>
+</tr>
+<tr>
+<td>面筋卷 · 老城散步途中遇到的现做面筋卷摊</td>
+<td>面筋卷（摊位、售卖待确认）</td>
+<td>摊名与地址未定</td>
+<td>沿既定路线遇到再尝，不专程找未确认摊位。</td>
+</tr>
+<tr>
+<td>面筋卷 · 小魏哥果仁烤面筋</td>
+<td>已确认果仁烤面筋，是否有卷饼待问</td>
+<td><strong>龙首北路，宫园壹号东门</strong></td>
+<td>龙首原后续备选。 <a target="_blank" rel="noopener noreferrer" href="https://hk.trip.com/restaurant/china/xi-an/detail/xiaoweigegeguorenmianjin-31520872/">门店地点与菜品资料</a></td>
+</tr>
+<tr>
+<td>手工麻食 · 陕西特色·独厚麻食（雁翔广场店）</td>
+<td>烩麻食</td>
+<td><strong>曲江新区雁翔广场 2 号楼 1 层 10102-B 号商铺</strong></td>
+<td>历史报道为手搓，当前工艺待问。离主线远，后续备选。 <a target="_blank" rel="noopener noreferrer" href="https://tw.trip.com/restaurant/china/xi-an/detail/restaurant-130000508/">门店地址</a> <a target="_blank" rel="noopener noreferrer" href="https://www.sohu.com/a/468024713_348920">手搓工艺的历史报道</a></td>
+</tr>
+<tr>
+<td>手工麻食 · 吴三酸菜麻食酱香面馆（印花布园小区店）</td>
+<td>酸菜麻食</td>
+<td><strong>印花布园小区西门向南约 30 米、路东</strong></td>
+<td>钟楼附近正餐替换，手搓工艺未核。 <a target="_blank" rel="noopener noreferrer" href="https://jp.trip.com/restaurant/china/xi-an/detail/wusansuancaimashijiangxiang-noodle-house-11225342/">门店地点与菜品资料</a></td>
+</tr>
+<tr>
+<td>肉夹馍 · 子午路张记肉夹馍（翠华路店）</td>
+<td>腊汁肉夹馍，肥瘦或皮瘦</td>
+<td><strong>翠华路挚友大厦一层</strong>，高德标“翠花南路 229 号”，部分资料写 227 号</td>
+<td>10.31 午饭。 <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D07BBR">高德分店定位</a></td>
+</tr>
+<tr>
+<td>肉夹馍 · 秦豫肉夹馍（东木头市店）</td>
+<td>腊汁肉夹馍</td>
+<td><strong>东木头市 19 号</strong></td>
+<td>11.01 早午餐，替换小雁塔；偏早午市，先查营业、售罄。 <a target="_blank" rel="noopener noreferrer" href="https://m.map.360.cn/?pid=9b5b665881f82723&src=pc_shenbian">地图定位</a> <a target="_blank" rel="noopener noreferrer" href="https://m.cityhui.com/shop/21279.html">营业参考</a></td>
+</tr>
+<tr>
+<td>凉皮 · 子午路张记肉夹馍（翠华路店）</td>
+<td>凉皮或米皮，以菜单为准</td>
+<td>翠华路挚友大厦一层，高德标翠花南路 229 号</td>
+<td>10.31 配肉夹馍。 <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D07BBR">门店定位</a></td>
+</tr>
+<tr>
+<td>凉皮 · 盛志望麻酱酿皮</td>
+<td>麻酱酿皮，两人分一份</td>
+<td><strong>大皮院西口 225 号，近北广济街</strong></td>
+<td>第一晚选大皮院线才去。 <a target="_blank" rel="noopener noreferrer" href="https://www.cityhui.com/shop/21253.html">门店地址与菜品参考</a></td>
+</tr>
+<tr>
+<td>肉丸胡辣汤 · 刘老虎肉丸糊辣汤（从新巷店）</td>
+<td>胡辣汤配馍或腊牛肉夹馍</td>
+<td><strong>莲湖区从新巷 12 号</strong></td>
+<td>洒金桥附近早餐，顺路才去。 <a target="_blank" rel="noopener noreferrer" href="https://ditu.amap.com/place/B001D0WFK9">高德定位</a> <a target="_blank" rel="noopener noreferrer" href="https://gs.ctrip.com/html5/you/foods/xian7/5067335.html">携程菜品与营业资料</a></td>
+</tr>
+<tr>
+<td>肉丸胡辣汤 · 马奎肉丸糊辣汤腊牛肉夹馍（康乐路店）</td>
+<td>胡辣汤＋腊牛肉夹馍</td>
+<td><strong>新城区康乐路，嘉惠公寓楼下商铺</strong></td>
+<td>东郊较远，后续备选。 <a target="_blank" rel="noopener noreferrer" href="https://hk.trip.com/restaurant/china/xi-an/detail/restaurant-11219952/">门店地点与菜品资料</a></td>
+</tr>
+<tr>
+<td>粉汤羊血 · 惠记粉汤羊血（西安大悦城店）</td>
+<td>粉汤羊血</td>
+<td><strong>慈恩西路 69 号，大悦城 B1-95</strong></td>
+<td>10.31 夜游晚饭，饿了问羊血饸饹。 <a target="_blank" rel="noopener noreferrer" href="https://maps.apple.com/place?auid=1118368799622630&lsp=57879">地图地址与菜品资料</a></td>
+</tr>
+<tr>
+<td>粉汤羊血 · 惠记粉汤羊血（永松路店）</td>
+<td>粉汤羊血</td>
+<td><strong>永松路 53 号</strong></td>
+<td>吉祥村一带后续备选；与大悦城店分开定位。 <a target="_blank" rel="noopener noreferrer" href="https://gs.ctrip.com/html5/you/foods/fooddetail/7/5068500.html">携程门店资料</a></td>
+</tr>
+<tr>
+<td>裤带面 · 爱骅裤带面馆（总店）</td>
+<td>油泼裤带面或三合一</td>
+<td><strong>端履门城市之心 1 层 6 号</strong></td>
+<td>11.01 东侧线，按当前门牌导航。 <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0KG57GAJV">高德定位</a> <a target="_blank" rel="noopener noreferrer" href="https://gs.ctrip.com/html5/you/foods/fooddetail/100057/16573410.html">菜品参考</a></td>
+</tr>
+<tr>
+<td>裤带面 · 郭老三面庄·biangbiang 面（大雁塔店）</td>
+<td>油泼或二合一</td>
+<td><strong>翠华路，大雁塔小学南隔壁</strong></td>
+<td>10.31 午饭替换张记。 <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFL8TGPB">高德分店定位</a> <a target="_blank" rel="noopener noreferrer" href="https://gs.ctrip.com/html5/you/foods/fooddetail/7/12475357.html">携程地点与菜单</a></td>
+</tr>
+</tbody></table>
+<h3>未确认店名的探店线索</h3>
+<ul>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV12StV6WEFH">电子西街早市</a>：包子、卷菜、豆花泡馍等；摊名未核，视频约 9:30 收摊不代表当前时间。</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1Hc411T7hi">城墙内早市</a>：疑东仓门一带；后经和平门，早市及米皮店名未核。</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1hr4y1i7cL">手搓莜面麻食</a>：店名未核，不能认定为独厚或吴三。</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1R2eS69Ed3">回坊酸汤水饺</a>：杂拌牛肉馅，店名未核。</li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.bilibili.com/video/BV1vC411E7Ng">龙首村酸汤水饺</a>：牛肉韭黄水饺、馅饼等，分店未核。</li>
+</ul>
+</article></section>
+<section id="hotels" role="tabpanel" aria-labelledby="tab-hotels" hidden><article><h2>酒店</h2>
+<p>市区首选永宁门，南稍门备选；同店连住四晚，方便午休。两家酒店均未定。</p>
+<h3>入住安排</h3>
+<table>
+<thead>
+<tr>
+<th>住宿</th>
+<th>入住日期</th>
+<th>预算与要求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>机场附近 1 晚</td>
+<td>10.28—10.29；10.29 凌晨到店</td>
+<td>100—150 元／间为比价目标；免费凌晨接机优先；机场这一晚住宿预算另计。</td>
+</tr>
+<tr>
+<td>市区 4 晚</td>
+<td>10.29—11.02；1 间、2 人</td>
+<td>200—300 元／间／晚，四晚 800—1,200 元；比较实付总价。</td>
+</tr>
+</tbody></table>
+<p>预算为筛选目标，未查询上述日期实时房价、房态。</p>
+<h3>机场过渡酒店参考</h3>
+<p>只住一晚，先筛 <strong>100—150 元／间、免费接机</strong>；合适房源少时放宽到 200 元。以下为比价候选，非 10.28 当晚报价；资料核对于 2026.10.03。</p>
+<table>
+<thead>
+<tr>
+<th>机场酒店</th>
+<th>凌晨接机与选择</th>
+<th>查询与联系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>尚客优酒店（西安咸阳国际机场店）</strong>；边方村老村南街东一户</td>
+<td>先比价。平台列免费接送机、24 小时前台；<strong>凌晨接机时段与 T5 接车点待确认</strong>。</td>
+<td><a target="_blank" rel="noopener noreferrer" href="https://hotels.ctrip.com/hotels/6660889.html">携程</a>；13892963199</td>
+</tr>
+<tr>
+<td><strong>如家华驿易居酒店（西安咸阳国际机场店）</strong>；边方村 B 区 1 排四、五户，按订单定位</td>
+<td>省钱备选。页面称 <strong>24 小时免费接机</strong>；T5 需先摆渡至 T2／T3 接车。到 T5 时先问能否直接接，避免凌晨多次换乘。</td>
+<td><a target="_blank" rel="noopener noreferrer" href="https://hotels.ctrip.com/hotels/127001182.html">携程</a>；15389465582</td>
+</tr>
+<tr>
+<td><strong>和颐西安咸阳国际机场航站楼店</strong>；空港商务中心 H 区</td>
+<td><strong>仅在实付总价接近前两家时考虑</strong>。官网称如家会员凭订单享 24 小时免费接送，需预约、整点发车；确认本次订单资格及航站楼接点。</td>
+<td><a target="_blank" rel="noopener noreferrer" href="https://bthhotels.com/wap/HotelInfo/0290A8?pt=info">官网</a>；029-33163333</td>
+</tr>
+</tbody></table>
+<p>订 10.28—10.29，注明 10.29 凌晨到店；接机时间按航班确认。下单前确认接机免费、等待时间、航班晚点保房和退房时间；睡醒再进城。比较“房费＋接机费”，不单看房价。</p>
+<h3>小红书住宿区域对比</h3>
+<p>参考 5 篇笔记及评论，检索日期 2026.10.02；评价为个人体验。</p>
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>笔记与评论反馈</th>
+<th>本次选择</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>永宁门／南门</strong></td>
+<td>老城与城南景点之间，方便中途回酒店；临城墙房间可能有车流声。<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/699eb4090000000023039847">区域推荐</a> <a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/6aa00ae600000000190278dc">五天游记</a></td>
+<td><strong>首选</strong>。优先近地铁、背街房，符合现有路线。</td>
+</tr>
+<tr>
+<td><strong>南稍门</strong></td>
+<td>笔记推荐作省钱备选，2、5 号线换乘方便。<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/6a51e1fb000000001503fd02">区域比较</a></td>
+<td>同档酒店明显便宜时选；路线需按实际酒店调整。</td>
+</tr>
+<tr>
+<td><strong>大差市</strong></td>
+<td>评论多次推荐，提到餐饮和地铁方便。<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/691675850000000007034466">酒店讨论</a></td>
+<td>经济型备选；需重新核对离店路线。</td>
+</tr>
+<tr>
+<td><strong>钟楼／鼓楼</strong></td>
+<td>逛吃方便，隔音评价分化；有人被夜间车声吵醒，也有人住得安静。<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/68f2d9ca000000000700c35f">住宿反馈</a></td>
+<td>不为“钟楼旁”加价；重点查房间朝向、隔音。</td>
+</tr>
+</tbody></table>
+<h3>经济型酒店候选</h3>
+<p>前三家已有地址资料；其余为小红书线索，具体分店待核。帖子低价不代表出行日期价格。</p>
+<table>
+<thead>
+<tr>
+<th>酒店候选</th>
+<th>位置与地址</th>
+<th>选择要点与来源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>如家酒店·neo（西安钟楼永宁门地铁站店）</strong></td>
+<td>文艺北路甲子一号，唐人大厦；官网名称带“碑林博物馆店”</td>
+<td>优先比价；2024 年装修，洗衣、寄存。平台标距站约 810 米，步行预留 10—15 分钟。<a target="_blank" rel="noopener noreferrer" href="https://hotels.ctrip.com/hotels/995246.html">携程</a> <a target="_blank" rel="noopener noreferrer" href="https://www.bthhotels.com/wap/HotelInfo/0290D9?pt=info">官网</a></td>
+</tr>
+<tr>
+<td><strong>汉庭酒店（西安永宁门地铁站店）</strong></td>
+<td>文艺北路甲子一号，唐人大厦；华住标注 3—6 层及部分一层</td>
+<td>与如家同楼比价；2025 年开业，洗衣、寄存。选外窗，避开电梯、洗衣房。<a target="_blank" rel="noopener noreferrer" href="https://hotels.ctrip.com/hotels/125368373.html">携程</a> <a target="_blank" rel="noopener noreferrer" href="https://m.huazhu.com/list/xian-XAJTDXXQGY-hanting">地址资料</a></td>
+</tr>
+<tr>
+<td><strong>汉庭西安明城墙南门酒店</strong></td>
+<td>碑林区振兴路 100 号</td>
+<td>官网称距永宁门 A2 口约 7 分钟；查近期房型与评价。<a target="_blank" rel="noopener noreferrer" href="https://m.huazhu.com/Hotel/Detail/7100683">官网</a></td>
+</tr>
+<tr>
+<td>湘子庙街附近汉庭</td>
+<td>永宁门片区；笔记未明确完整分店名</td>
+<td>笔记称房间较小；完整店名、地址待核，勿与前三家混同。<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/699eb4090000000023039847">小红书</a></td>
+</tr>
+<tr>
+<td>星泊、秋果、希岸</td>
+<td>南稍门片区；具体分店待核</td>
+<td>笔记列为省钱备选，先查实际总价与步行距离。<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/699eb4090000000023039847">小红书</a></td>
+</tr>
+<tr>
+<td>汉庭、如家 neo</td>
+<td>大差市片区；具体分店待核</td>
+<td>评论中的入住推荐，需补查门店、房型及近期评价。<a target="_blank" rel="noopener noreferrer" href="https://www.xiaohongshu.com/explore/691675850000000007034466">小红书评论</a></td>
+</tr>
+</tbody></table>
+<p>南大街 3 号汉庭钟楼店是另一家；因部分旧设施、噪音评价，不列首选。<a target="_blank" rel="noopener noreferrer" href="https://hotels.ctrip.com/hotels/1487041.html">门店评价</a></p>
+<h3>订房检查</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>筛选要求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>地铁距离</td>
+<td>优先实走约 5—8 分钟；可接受 10—15 分钟时再比较价格。</td>
+</tr>
+<tr>
+<td>房间</td>
+<td>外窗、独卫、背街；核对面积和近期隔音评价。</td>
+</tr>
+<tr>
+<td>房间位置</td>
+<td>远离电梯、洗衣房、排风设备；不要只看城墙景观。</td>
+</tr>
+<tr>
+<td>价格与退改</td>
+<td>统一比较四晚实付总价、早餐、取消期限；不直接套用帖子低价。</td>
+</tr>
+<tr>
+<td>机场过渡夜</td>
+<td>订 10.28 入住，注明 10.29 凌晨到店；确认接机与保留房间。</td>
+</tr>
+</tbody></table>
+</article></section>
+<section id="transport" role="tabpanel" aria-labelledby="tab-transport" hidden><article><h2>交通细节</h2>
+<p>酒店未定，以永宁门站和实际航站楼为基准。除注明官网或坐标计算外，距离、用时均为估算，非实时导航。酒店接驳、排队另计；地铁时间含常规进出站、候车、换乘。</p>
+<h3>第一天 机场进城与回坊</h3>
+<table>
+<thead>
+<tr>
+<th>路段</th>
+<th>距离口径</th>
+<th>建议交通与预留</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>航站楼 → 机场酒店</td>
+<td>酒店未知，暂不填写距离</td>
+<td>预约接机，确认接车点；勿默认可步行。</td>
+</tr>
+<tr>
+<td>机场酒店 → 永宁门住宿区</td>
+<td>航站楼至永宁门公路先按约 45—55 公里估算；酒店路段待补</td>
+<td>网约车车程 60—90 分钟，候车另加；14 号线→西安北换 2 号线，含酒店接送留 2—2.5 小时。</td>
+</tr>
+<tr>
+<td>永宁门站 → 钟楼外观</td>
+<td>步行估约 1.5—1.8 公里</td>
+<td>2 号线 1 站，共 15—25 分钟；步行 25—35 分钟。</td>
+</tr>
+<tr>
+<td>钟楼 → 鼓楼</td>
+<td>步行估约 0.4—0.6 公里</td>
+<td>步行 8—15 分钟，走过街设施。</td>
+</tr>
+<tr>
+<td>鼓楼 → 马宾小炒</td>
+<td>地图点位直线约 0.84 公里；步行估约 1—1.3 公里</td>
+<td>步行 20—30 分钟；北广济街 281 号。</td>
+</tr>
+<tr>
+<td>马宾小炒 → 永宁门站周边</td>
+<td>公路估约 3—5 公里；具体上车点影响绕行</td>
+<td>先步行到可上车点；含候车留 20—40 分钟。</td>
+</tr>
+</tbody></table>
+<p>直线距离仅核对位置，不能代替步行距离。 <a target="_blank" rel="noopener noreferrer" href="https://ditu.amap.com/place/B001D07CMS">鼓楼地点</a> <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFGCBK2I">马宾地点</a></p>
+<h3>第二天 兵马俑往返</h3>
+<table>
+<thead>
+<tr>
+<th>路段</th>
+<th>距离口径</th>
+<th>建议交通与预留</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>永宁门站周边 → 兵马俑博物馆</td>
+<td>公路估约 40—50 公里，具体高速路线不同</td>
+<td>车程 60—90 分钟，落客、步行、入园再留 30—45 分钟。</td>
+</tr>
+<tr>
+<td>永宁门 → 北大街 → 纺织城 → 华清池 → 兵马俑</td>
+<td>2 → 1 → 9 号线＋公交／短程网约车</td>
+<td>到兵马俑全程 2.5—3 小时，已含下一行接驳，不重复相加；早餐和出发均提前。</td>
+</tr>
+<tr>
+<td>华清池站 → 兵马俑</td>
+<td>公路估约 9—11 公里</td>
+<td>C 口游 613 路：含候车 40—60 分钟；网约车 20—30 分钟，候车另加。</td>
+</tr>
+<tr>
+<td>兵马俑出口 → 午餐 → 上车点</td>
+<td>出口周边选店；具体距离待餐馆选定</td>
+<td>出口附近吃，按正规上车点返回。</td>
+</tr>
+<tr>
+<td>兵马俑 → 永宁门站周边</td>
+<td>公路估约 40—50 公里</td>
+<td>车程 60—100 分钟，含候车留 2 小时；公共交通 2.5—3 小时。</td>
+</tr>
+</tbody></table>
+<p>导航兵马俑博物馆，与丽山园入口不同。 <a target="_blank" rel="noopener noreferrer" href="https://bmy.com.cn/guide/368.html?_isa=1">博物院官方交通说明</a></p>
+<h3>第三天 陕历博与大雁塔</h3>
+<table>
+<thead>
+<tr>
+<th>路段</th>
+<th>距离口径</th>
+<th>建议交通与预留</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>永宁门站 → 陕历博本馆南门</td>
+<td>公路估约 3.5—4.5 公里；官网列本馆距小寨站 778 米</td>
+<td>2 号线小寨，步行 15—20 分钟，总计 30—45 分钟；打车含候车 20—35 分钟，排队另计。</td>
+</tr>
+<tr>
+<td>陕历博南门 → 张记翠华路店</td>
+<td>地图点位直线约 0.36 公里；步行估约 0.5—0.7 公里</td>
+<td>步行 8—15 分钟，定位挚友大厦。</td>
+</tr>
+<tr>
+<td>张记／虎子／郭老三 → 永宁门站周边</td>
+<td>公路估约 4—5 公里</td>
+<td>打车含候车 25—45 分钟。</td>
+</tr>
+<tr>
+<td>永宁门站 → 大悦城惠记</td>
+<td>公路估约 5—6.5 公里</td>
+<td>打车含候车 30—45 分钟；地铁 2→3 号线含步行 50—65 分钟，找 B1 店铺另留 10 分钟。</td>
+</tr>
+<tr>
+<td>大雁塔地铁站 → 大悦城</td>
+<td>街面步行估约 0.8—1.2 公里，依出站口和商场入口变化</td>
+<td>步行 15—25 分钟；地铁站在北，商场在塔西南。</td>
+</tr>
+<tr>
+<td>大悦城 → 大雁塔南广场</td>
+<td>街面步行估约 0.3—0.5 公里</td>
+<td>步行 5—10 分钟，商场内部步行另计。</td>
+</tr>
+<tr>
+<td>南广场 → 不夜城北段 → 折返</td>
+<td>自选单程约 0.5—0.8 公里，往返约 1—1.6 公里</td>
+<td>含拍照休息 60—75 分钟。</td>
+</tr>
+<tr>
+<td>夜游结束 → 永宁门住宿区</td>
+<td>公路估约 5—7 公里；取决于结束点</td>
+<td>打车含候车 30—60 分钟；坐地铁需回北侧大雁塔站。</td>
+</tr>
+</tbody></table>
+<p>官网 778 米非指定出口至检票口实测；三家翠华路餐馆可互相替换。 <a target="_blank" rel="noopener noreferrer" href="https://www.sxhm.com/guide.html">陕历博官网</a> <a target="_blank" rel="noopener noreferrer" href="https://ditu.amap.com/place/B0FFFVOCLC">本馆南门</a> <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B001D07BBR">张记</a> <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFGZPDIV">虎子</a> <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0FFL8TGPB">郭老三</a></p>
+<h3>第四天 小雁塔与城墙老街</h3>
+<table>
+<thead>
+<tr>
+<th>路段</th>
+<th>距离口径</th>
+<th>建议交通与预留</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>永宁门站 → 西安博物院西门／北门</td>
+<td>入口不同，步行距离待酒店和入口确定后核对</td>
+<td>2 号线南稍门后步行，或短程打车；先留 25—45 分钟。按预约开放入口导航，不套用旧入口 500 米数据。</td>
+</tr>
+<tr>
+<td>西安博物院 → 永宁门站周边</td>
+<td>同一片区，回程约 1.5—2 公里量级</td>
+<td>地铁或短程打车，20—35 分钟。</td>
+</tr>
+<tr>
+<td>永宁门站 → 城墙永宁门登城入口</td>
+<td>步行估约 0.5—0.8 公里，入口不同会变</td>
+<td>步行 10—20 分钟，购票另计；导航检票入口。</td>
+</tr>
+<tr>
+<td>永宁门城墙 → 同门下墙</td>
+<td>短程往返主动控制在约 1.5—2 公里以内</td>
+<td>走 20—25 分钟折返，约 1 小时，同门下墙。</td>
+</tr>
+<tr>
+<td>永宁门下墙 → 书院门西端</td>
+<td>步行估约 0.3—0.5 公里</td>
+<td>步行 5—10 分钟，定位文化街西端。</td>
+</tr>
+<tr>
+<td>书院门西端 → 柏树林 → 爱骅总店</td>
+<td>步行估约 0.9—1.3 公里</td>
+<td>步行 20—30 分钟；城市之心一层六号。</td>
+</tr>
+<tr>
+<td>爱骅总店 → 永宁门站周边</td>
+<td>步行估约 1.3—1.8 公里</td>
+<td>步行 25—35 分钟；打车含候车 15—30 分钟。</td>
+</tr>
+</tbody></table>
+<p>累了保留城墙，取消书院门至面馆段。 <a target="_blank" rel="noopener noreferrer" href="https://beilin.xiancity.cn/system/2024/04/25/031133398.shtml">碑林融媒体指南</a> <a target="_blank" rel="noopener noreferrer" href="https://www.amap.com/place/B0KG57GAJV">爱骅总店地图地点</a></p>
+<h3>替换路线与第五天返程</h3>
+<table>
+<thead>
+<tr>
+<th>路段</th>
+<th>距离口径</th>
+<th>建议交通与取舍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>鼓楼 → 小学习巷 → 志亮庙后街店</td>
+<td>合计步行估约 1.5—2 公里；巷内选点影响路线</td>
+<td>步行 30—45 分钟，用餐另计；凉糕顺路再买。</td>
+</tr>
+<tr>
+<td>鼓楼 → 小皮院老杨家</td>
+<td>门牌及视频对应仍待复核</td>
+<td>替换马宾；完整门店未确认，暂不写精确距离。</td>
+</tr>
+<tr>
+<td>鼓楼 → 红埠街马洪／壹佳</td>
+<td>街面步行先按约 1—1.5 公里量级规划</td>
+<td>步行 20—30 分钟；与马宾、志亮选一家。</td>
+</tr>
+<tr>
+<td>永宁门下墙 → 湘子庙街 → 德福巷 → 春发生</td>
+<td>合计步行估约 1—1.5 公里</td>
+<td>步行 20—35 分钟，含慢逛晚饭约 2 小时；取消东侧线。</td>
+</tr>
+<tr>
+<td>春发生 → 永宁门站周边</td>
+<td>步行估约 1.2—1.7 公里</td>
+<td>步行 25—35 分钟；米皮按胃口加。</td>
+</tr>
+<tr>
+<td>永宁门站 → 围墙巷刘二店</td>
+<td>步行估约 0.5—0.9 公里，门牌仍待复核</td>
+<td>步行 10—20 分钟；是否顺路按酒店位置判断。</td>
+</tr>
+<tr>
+<td>永宁门站周边 → 机场实际出发航站楼</td>
+<td>公路估约 45—55 公里</td>
+<td>2 号线→西安北换 14 号线，站点至航站楼留 90—120 分钟，酒店到站另加；打车车程 60—90 分钟，候车、拥堵另加。</td>
+</tr>
+</tbody></table>
+<p>国内航班离店预留：打车 3.5—4 小时；地铁 4—4.5 小时。按实际航站楼导航。 <a target="_blank" rel="noopener noreferrer" href="https://www.xixianxinqu.gov.cn/xwzx/ztzl/yjhj/jt/1891134067765170178.html">T5 站开通信息</a></p>
+<h2>导航</h2>
+<p>逐日和单点地图依据正式路线生成；备选、酒店事件与未选店餐次不加入路线。
+Google Maps使用转换后的WGS84坐标；境内现场导航建议点开上方高德地点。距离沿用交通表估算，地图连线不代表实际交通路线。
+机场仅整体锚点，具体航站楼待补；惠记仅有商场点位，餐馆坐标待核，未用商场坐标冒充。</p>
+<ul>
+<li><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/34.4436933,108.7641715/34.2610168,108.9423739/34.2617985,108.9388653/34.2683887,108.9344119">10月29日｜补觉、钟鼓楼与小炒</a></p>
+<p>单点：<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.4436933,108.7641715">西安咸阳国际机场抵达</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2610168,108.9423739">钟楼外观</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2617985,108.9388653">鼓楼周边</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2683887,108.9344119">晚餐｜马宾小炒</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.3875728,109.2768802">10月30日｜兵马俑，回城休息</a>（单点）</p>
+<p>单点：<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.3875728,109.2768802">兵马俑｜一号坑、二三号坑</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/34.2250404,108.9506632/34.2219736,108.952061/34.2174393,108.9594954/34.2120614,108.959442">10月31日｜陕历博、肉夹馍、大雁塔</a></p>
+<p>单点：<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2250404,108.9506632">陕西历史博物馆｜基本陈列</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2219736,108.952061">午餐｜子午路张记肉夹馍（翠华路店）</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2174393,108.9594954">大雁塔南广场｜塔外观</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2120614,108.959442">大唐不夜城北段短逛</a></p>
+<p>坐标待核，未包含：晚餐｜惠记粉汤羊血（大悦城店）。</p>
+</li>
+<li><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/34.2520963,108.9423687/34.2544845,108.9434375/34.2581002,108.9490496">11月1日｜城墙、书院门、裤带面</a></p>
+<p>单点：<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2520963,108.9423687">永宁门城墙短程散步</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2544845,108.9434375">书院门慢逛</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.2581002,108.9490496">晚餐｜爱骅裤带面馆（总店）</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.4436933,108.7641715">11月2日｜按航班返程</a>（单点）</p>
+<p>单点：<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=34.4436933,108.7641715">西安咸阳国际机场返程</a></p>
+</li>
+</ul>
+</article></section>
+</main>
+<footer>酒店与返程航班待定，费用和交通时间为规划值。图文路书由 JourniOne 生成。 <a href="西安旅行计划.md" download>下载计划</a></footer>
+<dialog id="point-detail" aria-labelledby="detail-title"><div class="dialog-top"><h2 id="detail-title"></h2><button class="close" type="button" aria-label="关闭地点详情">×</button></div><p class="detail-time" id="detail-time"></p><p id="detail-description"></p><p id="detail-address"></p><a id="detail-map" target="_blank" rel="noopener noreferrer">地图导航</a></dialog>
+<script id="trip-data" type="application/json">[{"id":"day-1-airport","title":"西安咸阳国际机场抵达","description":"用户说明凌晨1点多到达；航班号、出发机场和航站楼待确认。机场坐标为整体锚点，不能用作接机点。","location":{"name":"西安咸阳国际机场","address":"陕西省咸阳市，具体航站楼待确认","lng":108.7641715,"lat":34.4436933,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B038E02IJ0","coordinate_scope":"机场整体锚点；非航站楼或接机点"},"date":"2026-10-29","schedule":{"timingType":"day_anchor","source":"existing_confirmed_itinerary","displayLabel":"凌晨1点多"}},{"id":"day-1-airport-hotel","title":"接机、机场酒店入住","description":"至约03:00为建议窗口。酒店未定；预订10.28—10.29一晚，确认凌晨接机和保房。","location":null,"date":"2026-10-29","schedule":{"timingType":"day_anchor","source":"existing_confirmed_itinerary","endLocal":"03:00","displayLabel":"落地后—约03:00"}},{"id":"day-1-sleep","title":"机场酒店补觉、洗漱","description":"酒店落实并可入住后执行，实际睡醒时间优先。","location":null,"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"03:00","endLocal":"10:30","durationMinutes":450}},{"id":"day-1-brunch-checkout","title":"早午餐、整理行李、退房","description":"机场酒店或附近餐馆尚未选定；退房时间需酒店确认。","location":null,"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"10:30","endLocal":"11:30","durationMinutes":60}},{"id":"day-1-city-transfer","title":"前往永宁门住宿区","description":"优先网约车；机场至永宁门公路估45—55公里，车程60—90分钟。地铁含接送留2—2.5小时，后续顺延。","location":null,"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"11:30","endLocal":"13:30","durationMinutes":120}},{"id":"day-1-checkin-lunch","title":"市区酒店寄存／入住、午饭","description":"永宁门酒店、午餐店未定；未到入住时间先寄存。","location":null,"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"13:30","endLocal":"14:30","durationMinutes":60}},{"id":"day-1-nap","title":"市区酒店午休","description":"酒店确认可进房后执行；午休优先。","location":null,"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"14:30","endLocal":"16:30","durationMinutes":120}},{"id":"day-1-bell-transfer","title":"前往钟楼","description":"永宁门2号线至钟楼1站，规划15—25分钟；赶不上则后续顺延。","location":null,"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"17:00","endLocal":"17:20","durationMinutes":20}},{"id":"day-1-bell","title":"钟楼外观","description":"只看外观；之后步行约0.4—0.6公里、8—15分钟至鼓楼。","location":{"name":"西安钟楼","address":"钟楼盘道中央","lng":108.9423739,"lat":34.2610168,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B001D09TAA","coordinate_scope":"地点锚点"},"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"17:20","endLocal":"17:35","durationMinutes":15}},{"id":"day-1-drum","title":"鼓楼周边","description":"到马宾步行估1—1.3公里、20—30分钟。","location":{"name":"西安鼓楼","address":"西大街北侧，钟楼西北","lng":108.9388653,"lat":34.2617985,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B001D07CMS","coordinate_scope":"地点锚点"},"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"17:50","endLocal":"18:00","durationMinutes":10}},{"id":"day-1-mabin","title":"晚餐｜马宾小炒","description":"北广济街281号；生熟双拼小炒，先点小份。志亮蒸饺或老杨家水饺只作替换。","location":{"name":"清真马宾小炒","address":"北广济街北口281号","lng":108.9344119,"lat":34.2683887,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B0FFGCBK2I","coordinate_scope":"地点锚点"},"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"18:30","endLocal":"19:15","durationMinutes":45}},{"id":"day-1-return","title":"散步、返回市区酒店","description":"酒店未定；先走到可上车道路，再打车回永宁门住宿区。仍困则整段晚间活动取消。","location":null,"date":"2026-10-29","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"19:15","endLocal":"20:30","durationMinutes":75}},{"id":"day-2-breakfast","title":"酒店附近早餐","description":"酒店和早餐店未定；粥、包子、鸡蛋或胡辣汤。","location":null,"date":"2026-10-30","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"08:00","endLocal":"08:40","durationMinutes":40}},{"id":"day-2-transfer","title":"前往兵马俑、入园核验","description":"公路估40—50公里；车程60—90分钟，落客、步行、排队另留30—45分钟。","location":null,"date":"2026-10-30","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"08:45","endLocal":"10:45","durationMinutes":120}},{"id":"day-2-warriors","title":"兵马俑｜一号坑、二三号坑","description":"建议入馆时段，需实名购票。默认不去丽山园。","location":{"name":"秦始皇兵马俑博物馆","address":"临潼区秦陵北路，兵马俑博物馆入口","lng":109.2768802,"lat":34.3875728,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B0FFGXMLTU","coordinate_scope":"地点锚点"},"date":"2026-10-30","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"10:45","endLocal":"13:00","durationMinutes":135}},{"id":"day-2-lunch","title":"出口附近午餐","description":"具体面食店待补；不绕临潼城区。","location":null,"date":"2026-10-30","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"13:00","endLocal":"14:00","durationMinutes":60}},{"id":"day-2-return","title":"返回永宁门住宿区","description":"含候车留2小时；若走公共交通，预计16:30—17:00到，后续顺延。","location":null,"date":"2026-10-30","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"14:00","endLocal":"16:00","durationMinutes":120}},{"id":"day-2-rest","title":"市区酒店休息","description":"酒店落实并可入住后执行。","location":null,"date":"2026-10-30","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"16:00","endLocal":"18:00","durationMinutes":120}},{"id":"day-2-dinner","title":"酒店附近晚餐","description":"具体店待补；优先就近面食。麻食店需先确认，不专程绕路。","location":null,"date":"2026-10-30","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"18:00","endLocal":"19:00","durationMinutes":60}},{"id":"day-2-evening","title":"住宿处休息","description":"晚饭后回住处休息；如需短散步，范围待酒店确定后补。","location":null,"date":"2026-10-30","schedule":{"timingType":"day_anchor","source":"existing_confirmed_itinerary","startLocal":"19:00","displayLabel":"19:00以后"}},{"id":"day-3-breakfast","title":"早餐、出门准备","description":"酒店、早餐店未定；带预约证件。","location":null,"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"08:00","endLocal":"09:00","durationMinutes":60}},{"id":"day-3-museum-transfer","title":"前往陕历博、排队","description":"2号线至小寨后步行15—20分钟；含排队留1小时。","location":null,"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"09:00","endLocal":"10:00","durationMinutes":60}},{"id":"day-3-history","title":"陕西历史博物馆｜基本陈列","description":"本馆小寨东路91号，按实际预约时段调整。未约到时只替换为已预约的西安博物院；两馆无票则上午休息。","location":{"name":"陕西历史博物馆本馆","address":"小寨东路91号；地图锚点为南门","lng":108.9506632,"lat":34.2250404,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B0FFFVOCLC","coordinate_scope":"本馆南门入口锚点"},"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"10:00","endLocal":"12:30","durationMinutes":150}},{"id":"day-3-zhang","title":"午餐｜子午路张记肉夹馍（翠华路店）","description":"陕博至店步行估0.5—0.7公里，留15分钟。翠华路挚友大厦一层；地图229号／部分资料227号，按完整店名导航。每人一个馍，共享凉皮或米皮。","location":{"name":"子午路张记肉夹馍（翠华路店）","address":"翠华路挚友大厦一层；高德翠花南路229号，部分资料227号","lng":108.952061,"lat":34.2219736,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B001D07BBR","coordinate_scope":"地点锚点"},"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"12:45","endLocal":"13:30","durationMinutes":45}},{"id":"day-3-return","title":"返回市区酒店","description":"优先打车；公路估4—5公里。","location":null,"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"13:30","endLocal":"14:15","durationMinutes":45}},{"id":"day-3-nap","title":"市区酒店午休","description":"酒店落实并可入住后执行。","location":null,"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"14:15","endLocal":"16:30","durationMinutes":135}},{"id":"day-3-evening-transfer","title":"前往大雁塔、大悦城","description":"公路估5—6.5公里。打车含候车约30—45分钟，地铁50—65分钟，找店另留10分钟。","location":null,"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"16:30","endLocal":"17:45","durationMinutes":75}},{"id":"day-3-huiji","title":"晚餐｜惠记粉汤羊血（大悦城店）","description":"慈恩西路69号，大悦城B1-95；小碗粉汤羊血，干饼按胃口加。旧稿仅有商场坐标，未冒用为餐馆坐标。","location":{"name":"惠记粉汤羊血（西安大悦城店）","address":"慈恩西路69号，西安大悦城B1-95","coordinate_status":"needs_verification","source_url":"https://www.amap.com/place/B0FFIS0P13"},"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"17:45","endLocal":"18:30","durationMinutes":45}},{"id":"day-3-square","title":"大雁塔南广场｜塔外观","description":"从大悦城步行估0.3—0.5公里；只看塔外观。","location":{"name":"大雁塔南广场","address":"雁塔区大雁塔南侧广场","lng":108.9594954,"lat":34.2174393,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B001D12PCJ","coordinate_scope":"地点锚点"},"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"18:40","endLocal":"19:00","durationMinutes":20}},{"id":"day-3-night","title":"大唐不夜城北段短逛","description":"北段锚点为贞观之治雕像群；单程估0.5—0.8公里，走累提前返回。","location":{"name":"大唐不夜城·贞观之治雕像群","address":"大唐不夜城北段","lng":108.959442,"lat":34.2120614,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B0FFLQE8IX","coordinate_scope":"北段雕像群锚点；不是全街区范围"},"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"19:10","endLocal":"19:30","durationMinutes":20}},{"id":"day-3-night-return","title":"返回市区酒店","description":"到可上车道路打车，或回北侧大雁塔地铁站；公路估5—7公里。","location":null,"date":"2026-10-31","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"19:30","endLocal":"20:30","durationMinutes":60}},{"id":"day-4-breakfast","title":"酒店附近早餐","description":"酒店、早餐店未定。","location":null,"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"09:00","endLocal":"10:00","durationMinutes":60}},{"id":"day-4-morning","title":"上午休息／可选园林","description":"默认留在住宿处休息。前一天未去且约到票，才改西安博物院＋小雁塔园林；90分钟含路程，从西门／北门入园，不登塔。备选不列入正式地图。","location":null,"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"10:00","endLocal":"11:30","durationMinutes":90}},{"id":"day-4-lunch","title":"住宿区午餐","description":"酒店及餐馆待定；可选园林时先回住宿片区。秦豫可替换早午餐，同时取消小雁塔。","location":null,"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"11:30","endLocal":"13:00","durationMinutes":90}},{"id":"day-4-nap","title":"市区酒店午休","description":"酒店落实并可入住后执行。","location":null,"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"13:00","endLocal":"15:00","durationMinutes":120}},{"id":"day-4-wall-transfer","title":"前往永宁门、购票","description":"以登城入口为终点；住宿区步行估0.5—0.8公里，酒店路段待核。","location":null,"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"15:00","endLocal":"15:30","durationMinutes":30}},{"id":"day-4-wall","title":"永宁门城墙短程散步","description":"走20—25分钟即折返，同门下墙，不走整圈。大雨、大风取消。","location":{"name":"西安城墙·永宁门登城入口","address":"西安城墙南门永宁门","lng":108.9423687,"lat":34.2520963,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B001D02131","coordinate_scope":"永宁门登城入口锚点"},"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"15:30","endLocal":"16:30","durationMinutes":60}},{"id":"day-4-shuyuan","title":"书院门慢逛","description":"从永宁门步行估0.3—0.5公里，留10分钟；累了跳过。","location":{"name":"书院门牌坊","address":"南大街东侧书院门街入口","lng":108.9434375,"lat":34.2544845,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B0HAJD5VUL","coordinate_scope":"地点锚点"},"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"16:40","endLocal":"17:15","durationMinutes":35}},{"id":"day-4-aihua","title":"晚餐｜爱骅裤带面馆（总店）","description":"从书院门步行估0.9—1.3公里，留25分钟。端履门城市之心1层6号；小份油泼裤带面或三合一，加素菜。西侧替换时取消书院门和本餐。","location":{"name":"爱骅裤带面馆（总店）","address":"端履门城市之心1层6号","lng":108.9490496,"lat":34.2581002,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B0KG57GAJV","coordinate_scope":"地点锚点"},"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"17:40","endLocal":"18:30","durationMinutes":50}},{"id":"day-4-return-pack","title":"回酒店、整理行李","description":"回永宁门住宿区；步行估1.3—1.8公里，具体酒店待定。","location":null,"date":"2026-11-01","schedule":{"timingType":"flexible","source":"existing_confirmed_itinerary","startLocal":"18:30","endLocal":"19:30","durationMinutes":60}},{"id":"day-5-checkout","title":"早餐、整理行李、退房","description":"航班时间、酒店退房要求、早餐店待补；早班机不安排游览。","location":null,"date":"2026-11-02","schedule":{"timingType":"day_anchor","source":"existing_confirmed_itinerary","displayLabel":"按航班调整"}},{"id":"day-5-late-flight","title":"晚班机可选：寄存、就近吃饭","description":"仅晚间起飞且时间充足时：退房寄存，在住宿片区吃午饭、喝茶或买伴手礼；具体店待补，取行李另留20—30分钟。","location":null,"date":"2026-11-02","schedule":{"timingType":"day_anchor","source":"existing_confirmed_itinerary","displayLabel":"条件式备选"}},{"id":"day-5-airport-transfer","title":"取行李、前往机场","description":"网约车起飞前3.5—4小时离店；地铁提前4—4.5小时。2号线至西安北换14号线到实际航站楼；公路估45—55公里，车程60—90分钟，候车另计。","location":null,"date":"2026-11-02","schedule":{"timingType":"day_anchor","source":"existing_confirmed_itinerary","displayLabel":"按起飞时间倒推"}},{"id":"day-5-airport","title":"西安咸阳国际机场返程","description":"国内航班建议起飞前约2小时到实际航站楼；航班、航站楼、返回机场待补。整体机场坐标不代替航站楼导航。","location":{"name":"西安咸阳国际机场","address":"陕西省咸阳市，具体航站楼待确认","lng":108.7641715,"lat":34.4436933,"coordinate_system":"WGS84","source_url":"https://www.amap.com/place/B038E02IJ0","coordinate_scope":"机场整体锚点；非航站楼或安检口"},"date":"2026-11-02","schedule":{"timingType":"day_anchor","source":"existing_confirmed_itinerary","displayLabel":"起飞前约2小时到达"}}]</script>
+<script>
+(()=>{
+const tabs=Array.from(document.querySelectorAll('[role="tab"]'));
+const panels=Array.from(document.querySelectorAll('[role="tabpanel"]'));
+function select(id,focus=false){const selected=tabs.find(t=>t.getAttribute('aria-controls')===id);if(!selected)return;tabs.forEach(t=>{const on=t===selected;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1});panels.forEach(p=>p.hidden=p.id!==id);if(focus)selected.focus()}
+tabs.forEach((t,index)=>{t.addEventListener('click',()=>select(t.getAttribute('aria-controls')));t.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(index+1)%tabs.length;if(event.key==='ArrowLeft')next=(index-1+tabs.length)%tabs.length;if(event.key==='Home')next=0;if(event.key==='End')next=tabs.length-1;if(next!==undefined){event.preventDefault();select(tabs[next].getAttribute('aria-controls'),true)}})});
+document.querySelectorAll('table').forEach(table=>{const wrap=document.createElement('div');wrap.className='table-wrap';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','可横向滚动的资料表');table.before(wrap);wrap.append(table)});
+const nodes=JSON.parse(document.getElementById('trip-data').textContent);
+const byId=new Map(nodes.map(n=>[n.id,n]));
+const frame=document.getElementById('roadbook-frame');
+const dialog=document.getElementById('point-detail');
+function openPoint(poi){const node=byId.get(poi?.key)||byId.get(poi?.id);if(!node)return;document.getElementById('detail-title').textContent=node.title;const s=node.schedule;document.getElementById('detail-time').textContent=node.date+' · '+(s.displayLabel||(s.startLocal?[s.startLocal,s.endLocal].filter(Boolean).join('—'):'时间待定'));document.getElementById('detail-description').textContent=node.description;document.getElementById('detail-address').textContent=node.location?.address||'';const link=document.getElementById('detail-map');const url=node.location?.source_url;link.hidden=!url;if(url)link.href=url;dialog.showModal()}
+window.addEventListener('message',event=>{if(event.source!==frame.contentWindow||event.origin!==location.origin)return;const data=event.data;if(!data||data.channel!=='flipmind-roadbook')return;if(data.type==='poi-open')openPoint(data.poi);if(data.type==='navigation-request'){const match=/^day-0?([1-5])$/.exec(String(data.pageId));if(match){select('plan');document.getElementById('plan-day-'+match[1])?.scrollIntoView({block:'start'})}}});
+dialog.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()}});
+})();
+</script>
+</body></html>

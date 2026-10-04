@@ -1,0 +1,13 @@
+<svg width="103" height="91" viewBox="0 0 103 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="103" height="91" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <mask id="frame-cutout" maskUnits="userSpaceOnUse" x="4" y="0" width="95" height="83">
+      <rect x="4" y="0" width="95" height="82.14" fill="white"/>
+      <rect x="7.85" y="4.12" width="87.93" height="55.15" fill="black"/>
+    </mask>
+  </defs>
+  <rect x="4" y="0" width="95" height="82.14" fill="#FFF0CD" mask="url(#frame-cutout)" filter="url(#shadow)"/>
+  <rect x="7.85" y="4.12" width="87.93" height="55.15" stroke="#BDBDBD"/>
+</svg>
