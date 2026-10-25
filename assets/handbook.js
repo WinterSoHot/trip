@@ -16,7 +16,6 @@ renderDay=function(){original();handbook()};handbook();
 $('show-day-details').addEventListener('click',()=>{const detail=$('day-details');detail.open=!detail.open;if(detail.open)detail.scrollIntoView({block:'start',behavior:reducedMotion.matches?'instant':'smooth'})});
 $('day-details').addEventListener('toggle',()=>{$('show-day-details').setAttribute('aria-expanded',String($('day-details').open))});
 $('focus-day-note').addEventListener('click',()=>{$('day-details').open=true;requestAnimationFrame(()=>{$('day-note').focus();$('day-note').scrollIntoView({block:'center',behavior:reducedMotion.matches?'instant':'smooth'})})});
-const image=$('trip-cover-image');function imageFailed(){image.closest('figure').classList.add('image-failed');$('cover-fallback').hidden=false}image.addEventListener('error',imageFailed);if(image.complete&&image.naturalWidth===0)imageFailed();
 // Printing expands details temporarily so a concise screen never omits the full itinerary.
 let printState=null;window.addEventListener('beforeprint',()=>{if(printState)return;printState=[...document.querySelectorAll('details')].map(node=>[node,node.open]);printState.forEach(([node])=>node.open=true)});window.addEventListener('afterprint',()=>{if(!printState)return;printState.forEach(([node,open])=>node.open=open);printState=null});
 })();

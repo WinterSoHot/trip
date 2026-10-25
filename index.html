@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="assets/handbook.css">
 <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="assets/transport.css">
+<link rel="stylesheet" href="assets/carousel.css">
 </head>
 <body>
 <div class="wrap">
@@ -29,7 +30,14 @@
 <div class="print-only">西安五天轻松旅行计划 · 2026.10.29—11.02</div>
 <section id="view-days" class="view" aria-label="每日安排">
 <div class="day-picker no-print" id="day-picker" aria-label="选择日期"></div>
-<figure class="trip-cover"><img id="trip-cover-image" src="assets/xian-museum-autumn.webp" alt="AI生成的陕西历史博物馆秋景意象，非实拍，不作为入口识别依据" width="2129" height="738" fetchpriority="high"><figcaption>陕历博 · 秋日意象（AI）</figcaption><p id="cover-fallback" hidden>西安 · 秋日慢游</p></figure>
+<figure class="trip-cover trip-carousel" id="trip-carousel" role="region" aria-roledescription="轮播图" aria-label="当天行程图片" tabindex="0" data-load-state="loading">
+<div class="carousel-stage" id="carousel-stage"></div><p id="cover-fallback" class="carousel-fallback">当日图片加载中…</p>
+<span class="cover-disclosure">AI 行程意象 · 非实拍</span>
+<button type="button" class="carousel-control carousel-prev" id="carousel-prev" aria-label="上一张行程图片"><img src="assets/icons/caret-left.svg" alt="" aria-hidden="true"></button>
+<button type="button" class="carousel-control carousel-next" id="carousel-next" aria-label="下一张行程图片"><img src="assets/icons/caret-right.svg" alt="" aria-hidden="true"></button>
+<div class="carousel-footer"><figcaption class="cover-caption" id="cover-caption"></figcaption><div class="carousel-pagination" id="carousel-pagination" aria-label="选择行程图片"></div><span id="carousel-count" class="carousel-count"></span><button type="button" class="carousel-control carousel-play" id="carousel-play" aria-label="暂停自动轮播"><img src="assets/icons/pause.svg" alt="" aria-hidden="true"></button></div>
+<span class="carousel-sr-only" id="carousel-live" role="status" aria-live="polite" aria-atomic="true"></span>
+</figure>
 <header class="day-head"><div class="handbook-title"><div class="eyebrow" id="day-date"></div><h1 id="day-title"></h1></div><div class="day-booking"><p id="day-reservation" class="reservation"></p><p id="day-subtitle" class="muted"></p></div><a id="day-navigation" class="primary-navigation" target="_blank" rel="noopener noreferrer">导航到南门</a></header>
 <div class="day-overview" id="day-overview" aria-label="当天行程概览"></div>
 <div class="overview-tools no-print"><button type="button" id="show-day-details" aria-controls="day-details" aria-expanded="false">查看全部安排</button><button type="button" id="focus-day-note" aria-controls="day-details">当天备注</button></div>
@@ -201,5 +209,7 @@ renderDay();renderRoute();renderFood();renderChecks();renderFlight();if(!saved)$
 <script src="assets/handbook.js"></script>
 <script src="assets/vendor/leaflet/leaflet.js"></script>
 <script src="assets/transport.js"></script>
+<script id="carousel-manifest" type="application/json">{"0":[{"src":"assets/xian-museum-autumn.webp","title":"陕西历史博物馆","alt":"陕西历史博物馆秋景意象，非实拍，不作为入口识别依据","position":"50% 60%"},{"src":"assets/carousel/day1-roujiamo.webp","title":"翠华路晚餐 · 肉夹馍与凉皮","alt":"肉夹馍与凉皮美食意象，非门店实拍，不代表特定门店出品"}],"1":[{"src":"assets/carousel/day2-warriors.webp","title":"兵马俑 · 一号坑","alt":"兵马俑一号坑军阵意象，非现场实拍"},{"src":"assets/carousel/day2-huaqing.webp","title":"华清宫 · 湖景园林","alt":"华清宫山下园林与湖景意象，非现场实拍"}],"2":[{"src":"assets/carousel/day3-furong.webp","title":"大唐芙蓉园 · 紫云楼与湖景","alt":"大唐芙蓉园紫云楼与湖景意象，非现场实拍"},{"src":"assets/carousel/day3-night.webp","title":"大唐不夜城 · 北段灯景","alt":"大唐不夜城北段夜景意象，非现场实拍，不代表指定演出"}],"3":[{"src":"assets/carousel/day4-wall.webp","title":"永宁门 · 城墙夜景","alt":"永宁门城墙夜景意象，非现场实拍，不代表演出"},{"src":"assets/carousel/day4-noodles.webp","title":"晚餐 · 油泼裤带面","alt":"油泼裤带面美食意象，非门店实拍，不代表特定门店出品"}],"4":[{"src":"assets/carousel/day5-airport.webp","title":"返程 · 机场候机","alt":"机场候机意象，非实拍，不作为西安T3入口或设施识别依据"},{"src":"assets/carousel/day5-flight.webp","title":"西安 → 杭州 · 夜航返程","alt":"夜航机窗意象，非实拍；11月2日晚起飞，11月3日凌晨抵杭"}]}</script>
+<script src="assets/carousel.js"></script>
 </body>
 </html>
