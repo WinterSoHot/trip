@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="assets/transport.css">
 <link rel="stylesheet" href="assets/carousel.css">
+<link rel="stylesheet" href="assets/food-guide.css">
 </head>
 <body>
 <div class="wrap">
@@ -56,7 +57,17 @@
 <div class="map-controls no-print"><button type="button" id="map-play" aria-pressed="false">播放路线</button><label class="field map-scrub">行程进度<input type="range" id="map-progress" min="0" max="1000" value="0"></label><a id="map-download" class="map-link" download>下载 GIF</a></div>
 <div class="map-status"><div><strong id="map-current"></strong><p id="map-transport" class="hint"></p></div><a id="map-navigate" class="map-link no-print" target="_blank" rel="noopener noreferrer">高德导航此段 ↗</a></div>
 </div></details></section>
-<section id="view-food" class="view" hidden aria-label="吃喝"><h2>吃喝</h2><div id="meals-content" class="prose"></div><h3>小吃备选</h3><p class="muted">九类小吃与 UP 探店。收藏不自动加入行程。</p><div class="toolbar no-print"><label class="field search">搜索<input type="search" id="food-search" placeholder="例如：酸汤水饺、翠华路、粉汤羊血"></label><label class="field">清单<select id="food-source"><option>路线餐馆</option><option>九类备选</option><option>UP 探店</option><option>全部记录</option></select></label><label class="field">小吃类型<select id="food-category"><option value="">全部类型</option></select></label><label class="toggle"><input type="checkbox" id="favorite-only">只看收藏</label><button type="button" id="clear-food">清除筛选</button></div><div class="food-result" id="food-count" role="status"></div><p class="hint no-print">表格可左右滑动。</p><div class="table-wrap"><table class="food-table"><thead><tr><th scope="col">收藏</th><th scope="col">店名</th><th scope="col">推荐菜</th><th scope="col">地址</th><th scope="col">点单、路线与来源</th></tr></thead><tbody id="food-body"></tbody></table><div class="empty" id="food-empty" hidden>无匹配结果，请调整筛选。</div></div><p class="hint" style="margin-top:15px">门店可能重复。评论线索未必核实；出发前确认分店和营业。</p></section>
+<section id="view-food" class="view food-guide" hidden aria-label="吃喝">
+ <div class="food-heading"><div><h2>吃喝</h2><p>把想吃的，放在顺路的一餐。</p></div><label class="food-search-label"><img src="assets/icons/magnifying-glass.svg" alt="" aria-hidden="true"><span class="food-sr-only">搜索店名、推荐菜或地址</span><input type="search" id="food-search" placeholder="搜店名、推荐菜或地址"></label></div>
+ <div class="food-controls no-print"><div class="food-segments" role="group" aria-label="吃喝清单"><button type="button" data-food-source="路线餐馆" aria-pressed="true">行程餐馆</button><button type="button" data-food-source="九类备选" aria-pressed="false">小吃分类</button><button type="button" data-food-source="UP 探店" aria-pressed="false">参考探店</button></div><label class="toggle"><input type="checkbox" id="favorite-only">只看收藏</label></div>
+ <section id="food-featured" aria-label="行程用餐精选"><p class="food-featured-label">行程用餐精选</p><div class="food-featured-grid" id="food-featured-grid"></div></section>
+ <div class="food-tastes no-print"><div><strong>想换个口味？</strong><div class="food-quick-categories" id="food-quick-categories"></div></div><p>每餐一家，两人先点小份；营业情况临行确认。</p></div>
+ <div class="food-refine no-print"><label>清单<select id="food-source"><option>路线餐馆</option><option>九类备选</option><option>UP 探店</option><option>全部记录</option></select></label><label>小吃类型<select id="food-category"><option value="">全部类型</option></select></label><button type="button" id="clear-food">清除筛选</button><span id="food-count" role="status"></span></div>
+ <details id="food-results-details" class="food-results-details"><summary id="food-results-summary">查看餐馆清单</summary><div id="food-results" class="food-results"></div><div class="empty" id="food-empty" hidden>无匹配结果，请调整筛选。</div></details>
+ <details class="food-meals"><summary>五天用餐安排</summary><div id="meals-content" class="prose"></div></details>
+ <p class="food-source-note">收藏不自动加入行程。同名门店可能有多条来源记录，分店与营业情况请临行核对。</p>
+ <div id="food-legacy" hidden inert aria-hidden="true"><table><tbody id="food-body"></tbody></table></div>
+</section>
 <section id="view-prep" class="view" hidden aria-label="出发准备"><h2>出发准备</h2><p class="muted">记录仅存本机，不跨设备同步；可导出备份。</p><div class="notice">市区酒店订10.28—11.02五晚；GS7638于10.29 00:20抵达T3后直接到店，提前确认凌晨入住、晚点保房。</div><div class="prose"><h3>往返航班</h3><div class="table-wrap"><table>
 <thead>
 <tr>
@@ -211,5 +222,6 @@ renderDay();renderRoute();renderFood();renderChecks();renderFlight();if(!saved)$
 <script src="assets/transport.js"></script>
 <script id="carousel-manifest" type="application/json">{"0":[{"src":"assets/xian-museum-autumn.webp","title":"陕西历史博物馆","alt":"陕西历史博物馆秋景意象，非实拍，不作为入口识别依据","position":"50% 60%"},{"src":"assets/carousel/day1-roujiamo.webp","title":"翠华路晚餐 · 肉夹馍与凉皮","alt":"肉夹馍与凉皮美食意象，非门店实拍，不代表特定门店出品"}],"1":[{"src":"assets/carousel/day2-warriors.webp","title":"兵马俑 · 一号坑","alt":"兵马俑一号坑军阵意象，非现场实拍"},{"src":"assets/carousel/day2-huaqing.webp","title":"华清宫 · 湖景园林","alt":"华清宫山下园林与湖景意象，非现场实拍"}],"2":[{"src":"assets/carousel/day3-furong.webp","title":"大唐芙蓉园 · 紫云楼与湖景","alt":"大唐芙蓉园紫云楼与湖景意象，非现场实拍"},{"src":"assets/carousel/day3-night.webp","title":"大唐不夜城 · 北段灯景","alt":"大唐不夜城北段夜景意象，非现场实拍，不代表指定演出"}],"3":[{"src":"assets/carousel/day4-wall.webp","title":"永宁门 · 城墙夜景","alt":"永宁门城墙夜景意象，非现场实拍，不代表演出"},{"src":"assets/carousel/day4-noodles.webp","title":"晚餐 · 油泼裤带面","alt":"油泼裤带面美食意象，非门店实拍，不代表特定门店出品"}],"4":[{"src":"assets/carousel/day5-airport.webp","title":"返程 · 机场候机","alt":"机场候机意象，非实拍，不作为西安T3入口或设施识别依据"},{"src":"assets/carousel/day5-flight.webp","title":"西安 → 杭州 · 夜航返程","alt":"夜航机窗意象，非实拍；11月2日晚起飞，11月3日凌晨抵杭"}]}</script>
 <script src="assets/carousel.js"></script>
+<script src="assets/food-guide.js"></script>
 </body>
 </html>
