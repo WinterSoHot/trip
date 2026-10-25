@@ -18,6 +18,8 @@
 
 </style>
 <link rel="stylesheet" href="assets/handbook.css">
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/transport.css">
 </head>
 <body>
 <div class="wrap">
@@ -35,13 +37,17 @@
 <details id="day-details" class="day-details"><summary><span id="day-details-label">完整日程</span><span class="progress-label" id="day-progress" role="status"></span></summary>
 <div class="grid"><div><div id="day-intro" class="notice day-intro"></div><div id="timeline" class="timeline"></div><details><summary>替换方案与预约</summary><div id="day-extras" class="prose"></div></details><details><summary>雨天与休息方案</summary><div id="weather" class="prose"></div></details></div><aside class="side"><div class="box soft"><div class="eyebrow">当天重点</div><h3 id="day-tip"></h3><button class="jump quiet" type="button" id="day-route">当天交通 →</button></div><div class="box"><h3>查找地点</h3><div class="links" id="day-places"></div><p class="hint" style="margin-top:12px">高德搜索：核对入口和分店。</p></div><div class="box"><label class="field" for="day-note">当天备注<textarea id="day-note" placeholder="预约、店名、调整…"></textarea></label><div class="save-status" id="note-status">自动保存至本机</div></div></aside></div></details>
 </section>
-<section id="view-routes" class="view" hidden aria-label="距离与交通"><h2>距离与交通</h2><p class="muted">酒店：优莱客酒店（西安钟楼回民街店），具体地址待核；酒店端距离与地铁接入待复算。</p><div class="notice">除注明来源外，距离和用时均为估算；另留候车、检票及步行时间。</div><label class="field route-selector no-print">选择日期<select id="route-select"></select></label><div class="route-map box">
-<div class="map-header"><div><h3 id="map-title">路线动画</h3><p class="hint">地点可点击；连线仅示意行程顺序。</p></div><label class="field no-print">路线<select id="map-variant"></select></label></div>
+<section id="view-routes" class="view" hidden aria-label="距离与交通">
+<div id="transport-days" class="transport-days no-print" aria-label="交通日期"></div>
+<div class="transport-layout"><aside class="transport-agenda"><div class="eyebrow" id="transport-date"></div><h2 id="transport-title"></h2><label hidden>选择日期<select id="route-select"></select></label><label class="field route-choice no-print">路线<select id="map-variant"></select></label><ol id="transport-stops" class="transport-stops" aria-label="当天路线"></ol><a id="transport-navigate" class="primary-navigation" target="_blank" rel="noopener noreferrer"></a><p id="transport-reminder" class="transport-reminder"></p><p class="transport-hotel-note">酒店地址待确认；酒店段距离和出发时间待复核。</p></aside>
+<div class="transport-geography"><header><div><h2 id="geographic-title">景点间路线示意</h2><p id="geographic-caption">地点锚点，连线只示意顺序。</p></div><button type="button" id="geographic-fit" class="quiet no-print">查看全线</button></header><div id="geographic-map" class="geographic-map" role="region" aria-label="可缩放的景点地图" tabindex="0"></div><div class="geographic-status" id="geographic-status" role="status">切换到交通栏目后加载地图。</div><footer class="geographic-footer"><span>酒店未定位 · 虚线非实际道路路径</span><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a></footer><button type="button" id="show-route-fallback" class="quiet no-print">查看离线顺序图</button></div></div>
+<details id="transport-table"><summary>逐段距离与交通细节</summary>
+<p class="hint no-print">表格可左右滑动。</p><div class="route-content prose" id="route-content"></div></details><details id="transport-legacy"><summary>顺序动画与 GIF 下载</summary><div class="route-map box">
+<div class="map-header"><div><h3 id="map-title">路线动画</h3><p class="hint">地点可点击；连线仅示意行程顺序。</p></div></div>
 <div class="map-grid"><div id="map-canvas" class="map-canvas"></div><div class="map-panel"><div class="map-legend"><span>蓝：打车</span><span>绿：步行</span><span>紫：地铁</span></div><p id="map-note" class="hint"></p><p class="hint">路线图仅示意顺序，非地理比例图；酒店端公里数待确认，景点间距离为估算。</p><ol id="map-legs" class="map-legs no-print" aria-label="选择路线段"></ol></div></div>
 <div class="map-controls no-print"><button type="button" id="map-play" aria-pressed="false">播放路线</button><label class="field map-scrub">行程进度<input type="range" id="map-progress" min="0" max="1000" value="0"></label><a id="map-download" class="map-link" download>下载 GIF</a></div>
 <div class="map-status"><div><strong id="map-current"></strong><p id="map-transport" class="hint"></p></div><a id="map-navigate" class="map-link no-print" target="_blank" rel="noopener noreferrer">高德导航此段 ↗</a></div>
-</div>
-<p class="hint no-print">表格可左右滑动。</p><div class="route-content prose" id="route-content"></div></section>
+</div></details></section>
 <section id="view-food" class="view" hidden aria-label="吃喝"><h2>吃喝</h2><div id="meals-content" class="prose"></div><h3>小吃备选</h3><p class="muted">九类小吃与 UP 探店。收藏不自动加入行程。</p><div class="toolbar no-print"><label class="field search">搜索<input type="search" id="food-search" placeholder="例如：酸汤水饺、翠华路、粉汤羊血"></label><label class="field">清单<select id="food-source"><option>路线餐馆</option><option>九类备选</option><option>UP 探店</option><option>全部记录</option></select></label><label class="field">小吃类型<select id="food-category"><option value="">全部类型</option></select></label><label class="toggle"><input type="checkbox" id="favorite-only">只看收藏</label><button type="button" id="clear-food">清除筛选</button></div><div class="food-result" id="food-count" role="status"></div><p class="hint no-print">表格可左右滑动。</p><div class="table-wrap"><table class="food-table"><thead><tr><th scope="col">收藏</th><th scope="col">店名</th><th scope="col">推荐菜</th><th scope="col">地址</th><th scope="col">点单、路线与来源</th></tr></thead><tbody id="food-body"></tbody></table><div class="empty" id="food-empty" hidden>无匹配结果，请调整筛选。</div></div><p class="hint" style="margin-top:15px">门店可能重复。评论线索未必核实；出发前确认分店和营业。</p></section>
 <section id="view-prep" class="view" hidden aria-label="出发准备"><h2>出发准备</h2><p class="muted">记录仅存本机，不跨设备同步；可导出备份。</p><div class="notice">市区酒店订10.28—11.02五晚；GS7638于10.29 00:20抵达T3后直接到店，提前确认凌晨入住、晚点保房。</div><div class="prose"><h3>往返航班</h3><div class="table-wrap"><table>
 <thead>
@@ -193,5 +199,7 @@ $('export').addEventListener('click',()=>{const lines=['西安五天旅行 · �
 renderDay();renderRoute();renderFood();renderChecks();renderFlight();if(!saved)$('storage-status').textContent='浏览器无法读取保存记录 · 可继续使用并导出记录';
 </script>
 <script src="assets/handbook.js"></script>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/transport.js"></script>
 </body>
 </html>
