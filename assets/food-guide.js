@@ -4,8 +4,7 @@
  const $f=id=>document.getElementById(id),byId=new Map(DATA.foods.map(item=>[item.id,item]));
  const featured=[
   {id:'food-5',title:'子午路张记肉夹馍',branch:'翠华路店',time:'10.29 16:45 · 出馆后',dishes:'肉夹馍 · 凉皮',address:'翠华路挚友大厦一层',image:'roujiamo',alt:'肉夹馍与凉皮菜品意象'},
-  {id:'food-23',title:'惠记粉汤羊血',branch:'西安大悦城店',time:'10.31 18:00 · 夜游前',dishes:'粉汤羊血',address:'慈恩西路69号 · 大悦城B1-95',image:'yangxue',alt:'粉汤羊血菜品意象'},
-  {id:'food-7',title:'爱骅裤带面馆',branch:'总店',time:'11.01 17:15 · 登城前',dishes:'油泼裤带面 · 三合一',address:'端履门城市之心1层6号',image:'noodles',alt:'油泼裤带面菜品意象'}
+  {id:'food-23',title:'惠记粉汤羊血',branch:'西安大悦城店',time:'10.31 18:00 · 夜游前',dishes:'粉汤羊血',address:'慈恩西路69号 · 大悦城B1-95',image:'yangxue',alt:'粉汤羊血菜品意象'}
  ];
  let wasDefault=null,filterIntent=false;
  const icon=(name,cls='')=>'<img class="'+cls+'" src="assets/icons/'+name+'.svg" alt="" aria-hidden="true">';
