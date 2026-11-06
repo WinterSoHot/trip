@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f3f5f9">
+  <meta name="description" content="双人同屏暗棋。手机、平板、电脑皆可玩，首次翻棋决定颜色。">
+  <title>暗棋 · 双人同屏</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232453d1'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='40' fill='white'%3E棋%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="game.js"></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="masthead">
+      <div><h1>暗棋</h1><p>两个人，一台设备。</p></div>
+      <button class="text-button" id="rules-button" type="button">玩法</button>
+    </header>
+    <section class="players" aria-label="对弈双方">
+      <div class="player" id="player-0"><span class="color-mark" aria-hidden="true"></span><div><h2>玩家 1 <span class="side-label">待分色</span></h2><p class="piece-count">先翻棋</p></div><span class="turn-tag">先手</span></div>
+      <div class="player" id="player-1"><span class="color-mark" aria-hidden="true"></span><div><h2>玩家 2 <span class="side-label">待分色</span></h2><p class="piece-count">等待翻棋</p></div><span class="turn-tag"></span></div>
+    </section>
+    <div class="game-status" aria-live="polite" aria-atomic="true">
+      <h2 id="summary" tabindex="-1">正在加载棋盘…</h2><span id="move-count">第 0 手</span>
+    </div>
+    <div class="board" id="board" role="group" aria-label="暗棋棋盘" aria-describedby="instruction"></div>
+    <div class="board-caption"><p id="instruction">点击暗子翻棋，首次翻棋决定颜色。</p><p id="last-action" aria-live="polite">红黑各 16 子</p></div>
+    <nav class="actions" aria-label="对局操作">
+      <button id="new-game" class="primary-button" type="button" disabled>重新开始</button>
+      <button id="resign-button" class="secondary-button" type="button" disabled>认输</button>
+    </nav>
+    <p class="save-note" id="save-note">局面自动保存在此浏览器</p>
+    <noscript><p class="notice">请启用 JavaScript 后开始下棋。</p></noscript>
+  </main>
+  <dialog id="rules-dialog" aria-labelledby="rules-title">
+    <h2 id="rules-title">怎么玩</h2>
+    <ol class="rules-list">
+      <li><strong>轮流一手。</strong>翻一枚暗子，或移动／吃一枚明子。玩家 1 首次翻出的颜色归玩家 1。</li>
+      <li><strong>上下左右一格。</strong>明子移动到相邻空位，不能走斜线。暗子不能移动或被吃。</li>
+      <li><strong>大吃小，同级互吃。</strong>将／帅 ＞ 士／仕 ＞ 象／相 ＞ 车 ＞ 马 ＞ 炮 ＞ 卒／兵。</li>
+      <li><strong>兵能吃将。</strong>兵／卒可吃将／帅及同级；将／帅不能吃兵／卒。</li>
+      <li><strong>炮隔一子吃。</strong>沿横线或竖线，恰好隔一枚任意棋，吃已翻开的敌子，不限大小。炮不能直接吃相邻棋。</li>
+      <li><strong>胜负与和棋。</strong>对手棋子全被吃掉，或没有任何合法操作时获胜。同一局面连同轮次出现三次，或连续 60 手没有翻棋、吃子时和棋。</li>
+    </ol>
+    <p class="dialog-note">不连吃，不计时。用鼠标或手指点棋；键盘方向键选格，回车／空格操作。</p>
+    <form method="dialog"><button class="primary-button" autofocus>知道了</button></form>
+  </dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+    <h2 id="confirm-title"></h2><p id="confirm-description"></p>
+    <div class="dialog-actions"><button class="secondary-button" id="cancel-confirm" type="button">取消</button><button class="primary-button" id="accept-confirm" type="button">确认</button></div>
+  </dialog>
+</body>
+</html>

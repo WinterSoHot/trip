@@ -1,0 +1,32 @@
+/* Day-specific imagery. Presentation state never changes the saved itinerary. */
+(()=>{
+ const cover=document.getElementById('trip-carousel');if(!cover)return;
+ const galleries=JSON.parse(document.getElementById('carousel-manifest').textContent);
+ const stage=document.getElementById('carousel-stage'),fallback=document.getElementById('cover-fallback'),caption=document.getElementById('cover-caption'),counter=document.getElementById('carousel-count'),pagination=document.getElementById('carousel-pagination'),play=document.getElementById('carousel-play'),live=document.getElementById('carousel-live');
+ let day=null,index=0,revision=0,timer=null,autoAllowed=!reducedMotion.matches,hovered=false,focused=false,printing=false,inViewport=true,nextImage=null,gesture=null;
+ const items=()=>galleries[String(day)]||[];
+ const visible=()=>!document.getElementById('view-days').hidden&&!document.hidden&&!printing&&inViewport;
+ function stopTimer(){if(timer!==null)clearTimeout(timer);timer=null}
+ function syncTimer(){stopTimer();play.setAttribute('aria-label',autoAllowed?'暂停自动轮播':'播放自动轮播');play.setAttribute('aria-pressed',String(autoAllowed));play.querySelector('img').src=autoAllowed?'assets/icons/pause.svg':'assets/icons/play.svg';
+  const running=autoAllowed&&!hovered&&!focused&&visible()&&items().length>1&&cover.dataset.loadState==='ready';cover.dataset.autoplay=running?'running':'paused';if(running)timer=setTimeout(()=>show(index+1,false),6000);
+ }
+ function preloadNext(){if(!visible()||items().length<2)return;const following=items()[(index+1)%items().length];if(nextImage?.getAttribute('src')===following.src)return;nextImage=new Image();nextImage.decoding='async';nextImage.onload=()=>{};nextImage.onerror=()=>{};nextImage.src=following.src;}
+ function show(target,manual){if(!items().length)return;if(manual)autoAllowed=false;stopTimer();index=(target+items().length)%items().length;const item=items()[index],token=++revision,currentDay=day;stage.replaceChildren();cover.classList.remove('image-failed');cover.dataset.carouselDay=String(day);cover.dataset.carouselIndex=String(index);cover.dataset.loadState='loading';cover.setAttribute('aria-busy','true');caption.textContent=item.title;counter.textContent=(index+1)+' / '+items().length;pagination.querySelectorAll('[data-cover-index]').forEach(button=>button.setAttribute('aria-current',String(+button.dataset.coverIndex===index)));fallback.textContent=DATA.days[day].date+' · 当日图片加载中…';fallback.hidden=false;syncTimer();
+  const image=nextImage?.getAttribute('src')===item.src?nextImage:new Image();if(image===nextImage)nextImage=null;image.id='trip-cover-image';image.alt='AI 行程意象，非实拍：'+item.alt;image.draggable=false;image.decoding='async';image.style.objectPosition=item.position||'50% 50%';
+  let settled=false;const valid=()=>token===revision&&day===currentDay;
+  function failed(){if(!valid()||settled)return;settled=true;stage.replaceChildren();cover.dataset.loadState='failed';cover.setAttribute('aria-busy','false');fallback.textContent=DATA.days[day].date+' · '+item.title+'图片暂不可用，可继续切换。';fallback.hidden=false;autoAllowed=false;syncTimer();if(manual)live.textContent=fallback.textContent}
+  function loaded(){if(!valid()||settled)return;if(!image.naturalWidth){failed();return}settled=true;stage.replaceChildren(image);fallback.hidden=true;cover.dataset.loadState='ready';cover.setAttribute('aria-busy','false');syncTimer();preloadNext();if(manual)live.textContent=DATA.days[day].date+'，第'+(index+1)+'张，共'+items().length+'张：'+item.title}
+  image.onload=loaded;image.onerror=failed;if(image.getAttribute('src')!==item.src)image.src=item.src;if(image.complete){if(image.naturalWidth)loaded();else failed();}
+ }
+ function updateDay(){const incoming=DATA.days[state.day].id;if(incoming===day){syncTimer();return}day=incoming;nextImage=null;pagination.replaceChildren();items().forEach((item,i)=>{const button=document.createElement('button');button.type='button';button.dataset.coverIndex=String(i);button.textContent=String(i+1);button.setAttribute('aria-label','查看第'+(i+1)+'张：'+item.title);button.setAttribute('aria-current',String(i===0));pagination.append(button)});show(0,false);}
+ document.getElementById('carousel-prev').addEventListener('click',()=>show(index-1,true));document.getElementById('carousel-next').addEventListener('click',()=>show(index+1,true));pagination.addEventListener('click',event=>{const button=event.target.closest('[data-cover-index]');if(button)show(+button.dataset.coverIndex,true)});
+ play.addEventListener('click',()=>{autoAllowed=!autoAllowed;if(autoAllowed&&cover.dataset.loadState==='failed')show(index+1,false);syncTimer()});
+ cover.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();show(index+(event.key==='ArrowLeft'?-1:1),true)}});
+ cover.addEventListener('pointerdown',event=>{if(!event.isPrimary||event.target.closest('button'))return;gesture={x:event.clientX,y:event.clientY,time:Date.now(),id:event.pointerId};try{cover.setPointerCapture(event.pointerId)}catch{}});
+ cover.addEventListener('pointerup',event=>{if(!gesture||gesture.id!==event.pointerId)return;const dx=event.clientX-gesture.x,dy=event.clientY-gesture.y,duration=Date.now()-gesture.time;gesture=null;if(Math.abs(dx)>=45&&Math.abs(dx)>Math.abs(dy)*1.4&&duration<1500)show(index+(dx<0?1:-1),true)});cover.addEventListener('pointercancel',()=>gesture=null);
+ cover.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch'){hovered=true;syncTimer()}});cover.addEventListener('pointerleave',event=>{if(event.pointerType!=='touch'){hovered=false;syncTimer()}});
+ cover.addEventListener('focusin',()=>{focused=true;syncTimer()});cover.addEventListener('focusout',event=>{if(!cover.contains(event.relatedTarget)){focused=false;syncTimer()}});
+ document.addEventListener('visibilitychange',()=>{syncTimer();if(visible())preloadNext()});reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)autoAllowed=false;syncTimer()});window.addEventListener('beforeprint',()=>{printing=true;syncTimer()});window.addEventListener('afterprint',()=>{printing=false;syncTimer()});
+ if(window.IntersectionObserver)new IntersectionObserver(entries=>{inViewport=entries[0].isIntersecting;syncTimer();if(inViewport)preloadNext()},{threshold:0.05}).observe(cover);
+ const oldRender=renderDay;renderDay=function(){oldRender();updateDay()};const oldShow=showView;showView=function(view){oldShow(view);syncTimer();if(view==='days')preloadNext()};updateDay();
+})();
